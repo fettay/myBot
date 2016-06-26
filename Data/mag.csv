@@ -1,0 +1,187 @@
+,Code de magasin,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Num�ro de t�l�phone principal,Ligne d'adresse 1,Ligne d'adresse 2,Ville,Adresse,Adresse2,Words
+0,Suisse4,,,,,,,,043 497 22 88,10 Barengasse,,Zurich,10 Barengasse,,barengasse  zurich
+1,Royaume-Uni9,,,,,,,,020 7629 9018,19 South Molton Street Mayfair,,London,19 South Molton Street Mayfair,,south molton street mayfair  london
+2,Etats-Unis7,,,,,,,,(305) 792-1157,19555 Biscayne Blvd,,Miami,19555 Biscayne Blvd,,biscayne blvd  miami
+3,France94,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 76 94 27 76,10 rue Clot Bey,,Grenoble,10 rue Clot Bey,,rue clot bey  grenoble
+4,France48,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 44 59 39 06,3 rue des Rosiers,,Paris,3 rue des Rosiers,,rue des rosiers  paris
+5,Allemagne5,,,,,,,,040 87972297,Bleichenbrucke 1/7,,Hambourg,Bleichenbrucke 1/7,,bleichenbrucke 1/7  hambourg
+6,Japon9,,,,,,,,06-6485-7666,3-1-3 Umeda,,Kita-ku,3-1-3 Umeda,,3-1-3 umeda  kita-ku
+7,France30,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 80 48 49 85,41 Rue de la Libert�,,Dijon,41 Rue de la Libert�,,rue de la libert�  dijon
+8,Etats-Unis1,,,,,,,,(310) 358-9616,8640 Sunset Boulevard,West Hollywood,Los Angeles,8640 Sunset Boulevard,West Hollywood,sunset boulevard west hollywood los angeles
+9,Chine8,,,,,,,,010 6417 6110,19 Sanlitun North Road,Taiguli,Beijing,19 Sanlitun North Road,Taiguli,sanlitun north road taiguli beijing
+10,France12,09:30-20:00,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,04 98 03 62 01,9 Boulevard de Strasbourg,Galeries Lafayette,Toulon,9 Boulevard de Strasbourg,Galeries Lafayette,boulevard de strasbourg galeries lafayette toulon
+11,0025 - Montmartre,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 40 13 00 54,11 rue de Montmartre,,Paris,11 rue de Montmartre,,rue de montmartre  paris
+12,France116,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 91 19 26 91,Boulevard du Littoral,Printemps terrasses du port,Marseille,Boulevard du Littoral,Printemps terrasses du port,boulevard du littoral printemps terrasses du port marseille
+13,Espagne9,,,,,,,,963 51 49 10,C/Marques de dos aguas 7,,Valencia,C/Marques de dos aguas 7,,c/marques de dos aguas  valencia
+14,Espagne8,,,,,,,,917 70 49 95,79 Raimudo Fernandez Villaverde,,Madrid,79 Raimudo Fernandez Villaverde,,raimudo fernandez villaverde  madrid
+15,Royaume-Uni6,,,,,,,,020 8332 3004,22 Hill Street Richmond,,London,22 Hill Street Richmond,,hill street richmond  london
+16,France84,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 41 43 35 17,6 rue d'Alsace,,Angers,6 rue d'Alsace,,rue d'alsace  angers
+17,France26,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 34 33 24 06,4 Rue Lapeyrouse,Galeries Lafayette,Toulouse,4 Rue Lapeyrouse,Galeries Lafayette,rue lapeyrouse galeries lafayette toulouse
+18,Etats-Unis6,,,,,,,,(212) 396-3800,992 Madison Ave,,NY,992 Madison Ave,,madison ave  ny
+19,France87,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 31 88 81 64,104 Rue Eug�ne Colas,,Deauville,104 Rue Eug�ne Colas,,rue eug�ne colas  deauville
+20,France25,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,09 54 63 81 05,4 Rue Lapeyrouse,Galeries Lafayette,Toulouse,4 Rue Lapeyrouse,Galeries Lafayette,rue lapeyrouse galeries lafayette toulouse
+21,France42,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 48 87 46 53,36 rue de la Verrerie,,Paris,36 rue de la Verrerie,,rue de la verrerie  paris
+22,Japon7,,,,,,,,093-551-4533,3-1-1 Kyomachi,,Kokurakita-ku,3-1-1 Kyomachi,,3-1-1 kyomachi  kokurakita-ku
+23,France4,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 34 88 66 00,2 Avenue de l'Europe,Printemps V�lizy 2,V�lizy,2 Avenue de l'Europe,Printemps V�lizy 2,avenue de l'europe printemps v�lizy v�lizy
+24,Suisse5,,,,,,,,022 310 64 44,1 rue du Perron,,Gen�ve,1 rue du Perron,,rue du perron  gen�ve
+25,France16,,10:30-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 42 38 65 08,7 Rue Marius Reynaud,,Aix en Provence,7 Rue Marius Reynaud,,rue marius reynaud  aix en provence
+26,France34,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 87 62 05 14,4 rue Winston Churchill,,Metz,4 rue Winston Churchill,,rue winston churchill  metz
+27,France96,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 83 32 60 18,2 Avenue Foch,Printemps Nancy,Nancy,2 Avenue Foch,Printemps Nancy,avenue foch printemps nancy nancy
+28,Etats-Unis4,,,,,,,,(212) 989-7300,831 Washington Street,,NY,831 Washington Street,,washington street  ny
+29,Royaume-Uni12,,,,,,,,020 7225 5935,Harrods Women - 87-135 Brompton Road,4�me �tage,London,Harrods Women - 87-135 Brompton Road,4�me �tage,harrods women - 87-135 brompton road 4�me �tage london
+30,France58,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 43 22 03 34,22 rue D�part,CC Montparnasse,Paris,22 rue D�part,CC Montparnasse,rue d�part cc montparnasse paris
+31,France21,09:30-20:00,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,04 93 62 66 19,6 Avenue Jean M�decin,,Nice,6 Avenue Jean M�decin,,avenue jean m�decin  nice
+32,Danemark1,,,,,,,,33 33 93 36,"1, Ostergade",,Copenhagen,"1, Ostergade",,"1, ostergade  copenhagen"
+33,Royaume-Uni5,,,,,,,,020 7433 3600,23-24 Hampstead High Street,,London,23-24 Hampstead High Street,,23-24 hampstead high street  london
+34,France97,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 83 48 35 68,2 Avenue Foch,Printemps Nancy,Nancy,2 Avenue Foch,Printemps Nancy,avenue foch printemps nancy nancy
+35,Russie2,,,,,,,,8 (495) 951-11-98,"48, Kutuzovsky prospekt",Vremena Goda Mall,Moscou,"48, Kutuzovsky prospekt",Vremena Goda Mall,"48, kutuzovsky prospekt vremena goda mall moscou"
+36,Royaume-Uni7,,,,,,,,020 7313 9518,42 Ledbury Road Kensington,,London,42 Ledbury Road Kensington,,ledbury road kensington  london
+37,Royaume-Uni3,,,,,,,,020 7586 8633,94 St John Wood's High street,,London,94 St John Wood's High street,,st john wood's high street  london
+38,Russie1,,,,,,,,8 (495) 725-41-15,"3, Red Square",,Moscou,"3, Red Square",,"3, red square  moscou"
+39,Etats-Unis12,,,,,,,,(914) 684-6282,175 Bloomingdale Road,,NY,175 Bloomingdale Road,,bloomingdale road  ny
+40,Etats-Unis9,,,,,,,,(310) 772-7108,10250 Santa Monica Blvd,,LA,10250 Santa Monica Blvd,,santa monica blvd  la
+41,France114,10:00-19:30,10:00-19:30,10:00-19:30,10:00-19:30,10:00-21:00,10:00-19:30,10:00-19:30,01 43 79 84 65,21-25 Cours de Vincennes,,Paris,21-25 Cours de Vincennes,,21-25 cours de vincennes  paris
+42,France45,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 21 82 63 71,33 Boulevard du Parc,,Coquelles,33 Boulevard du Parc,,boulevard du parc  coquelles
+43,Etats-Unis11,,,,,,,,(415) 856-5612,845 Market Street,,San Francisco,845 Market Street,,market street  san francisco
+44,France85,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 73 35 15 82,25 Place de Jaude,Galeries Lafayette,Clermont Ferrand,25 Place de Jaude,Galeries Lafayette,place de jaude galeries lafayette clermont ferrand
+45,France105,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 67 27 00 09,1 Rue des Pertuisanes,,Montpellier,1 Rue des Pertuisanes,,rue des pertuisanes  montpellier
+46,Suisse3,,,,,,,,027 480 38 84,Rue du Prado 9,,Crans,Rue du Prado 9,,rue du prado  crans
+47,Chine5,,,,,,,,021 5466 2102,999 Huaihai Middle Rd,,Shanghai,999 Huaihai Middle Rd,,huaihai middle rd  shanghai
+48,France66,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 44 82 08 35,2 Place des Victoires,,Paris,2 Place des Victoires,,place des victoires  paris
+49,France93,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-21:00,09:30-20:00,09:30-20:00,01 42 82 40 87,10 rue de Mogador,,Paris,10 rue de Mogador,,rue de mogador  paris
+50,France27,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 47 42 32 81,42 rue du Faubourg St Honor�,,Paris,42 rue du Faubourg St Honor�,,rue du faubourg st honor�  paris
+51,France108,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 78 62 92 49,17 Rue du Docteur Bouchut,,Lyon,17 Rue du Docteur Bouchut,,rue du docteur bouchut  lyon
+52,France18,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 93 43 11 56,6 rue du Commandant Andr�,,Cannes,6 rue du Commandant Andr�,,rue du commandant andr�  cannes
+53,Su�de1,,,,,,,,08-611 80 04,Birger Jarlsgatan 8,,Stockholm,Birger Jarlsgatan 8,,birger jarlsgatan  stockholm
+54,France13,10:00-19:00,,14:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 99 78 50 65,8 rue Leperdit,,Rennes,8 rue Leperdit,,rue leperdit  rennes
+55,France123,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 59 41 85 72,19 Place Georges Clemenceau,Galeries Lafayette Biarritz,Biarritz,19 Place Georges Clemenceau,Galeries Lafayette Biarritz,place georges clemenceau galeries lafayette biarritz biarritz
+56,Italie2,,,,,,,,02 4819 7887,"3,Corso Vercelli",,Milano,"3,Corso Vercelli",,"3,corso vercelli  milano"
+57,Etats-Unis2,,,,,,,,(212) 965-8700,153 Mercer Street,,NY,153 Mercer Street,,mercer street  ny
+58,France31,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 91 52 94 56,40 Rue Saint-Ferr�ol,,Marseille,40 Rue Saint-Ferr�ol,,rue saint-ferr�ol  marseille
+59,France7,10:00-20:00,,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,01 39 55 54 39,2 Avenue Charles de Gaulle,,Le Chesnay,2 Avenue Charles de Gaulle,,avenue charles de gaulle  le chesnay
+60,France44,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 88 16 96 24,34 Rue du 22 Novembre,,Strasbourg,34 Rue du 22 Novembre,,rue du novembre  strasbourg
+61,Belgique5,,,,,,,,02 514 05 24,73 rue Antoine Dansaert,,Bruxelles,73 rue Antoine Dansaert,,rue antoine dansaert  bruxelles
+62,Allemagne4,,,,,,,,089 21268819,Neuturmstrassee 10,,Munich,Neuturmstrassee 10,,neuturmstrassee  munich
+63,Espagne4,,,,,,,,915 78 46 62,90 calle Claudio Coello,,Madrid,90 calle Claudio Coello,,calle claudio coello  madrid
+64,Espagne2,,,,,,,,932 09 22 45,606 avenida Diagonal,,Barcelona,606 avenida Diagonal,,avenida diagonal  barcelona
+65,Etats-Unis10,,,,,,,,(212) 729-4501,504 Broadway,,NY,504 Broadway,,broadway  ny
+66,Japon6,,,,,,,,082-568-3366,9-1 Matsubaracho,,Minami-ku,9-1 Matsubaracho,,9-1 matsubaracho  minami-ku
+67,France11,10:30-19:30,,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,01 42 92 00 61,9 rue du 29 Juillet,,Paris,9 rue du 29 Juillet,,rue du juillet  paris
+68,Etats-Unis3,,,,,,,,(212) 414-8470,409 Bleecker St,West Village,NY,409 Bleecker St,West Village,bleecker st west village ny
+69,Irlande1,,,,,,,,(01) 605 6666,88-95 Grafton Street Dublin 2,2�me �tage,Dublin,88-95 Grafton Street Dublin 2,2�me �tage,88-95 grafton street dublin 2�me �tage dublin
+70,France69,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 45 25 04 07,16 bis rue de Passy,,Paris,16 bis rue de Passy,,bis rue de passy  paris
+71,France51,,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-20:00,02 31 91 73 92,28 rue Saint Jean,1er �tage,Caen,28 rue Saint Jean,1er �tage,rue saint jean 1er �tage caen
+72,Japon10,,,,,,,,06-6226-8311,1-8-3 Shinsaibashi,,Chuo-ku,1-8-3 Shinsaibashi,,1-8-3 shinsaibashi  chuo-ku
+73,France61,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 45 49 10 34,200 Boulevard Saint Germain,,Paris,200 Boulevard Saint Germain,,boulevard saint germain  paris
+74,France65,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 40 20 43 05,2 Place Sainte Croix,,Nantes,2 Place Sainte Croix,,place sainte croix  nantes
+75,Suisse2,,,,,,,,022 310 67 43,5 rue de la Fontaine,,Gen�ve,5 rue de la Fontaine,,rue de la fontaine  gen�ve
+76,Chine7,,,,,,,,010 8561 9588,"9, Dongdaqiao Road",Park View Green,Beijing,"9, Dongdaqiao Road",Park View Green,"9, dongdaqiao road park view green beijing"
+77,France50,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 45 00 73 77,3 Avenue Victor Hugo,,Paris,3 Avenue Victor Hugo,,avenue victor hugo  paris
+78,France36,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 35 15 83 82,4 Rue du Gros Horloge,,Rouen,4 Rue du Gros Horloge,,rue du gros horloge  rouen
+79,Chine6,,,,,,,,010 6612 1920,No 110 Xidan North Street,,Beijing,No 110 Xidan North Street,,no xidan north street  beijing
+80,Royaume-Uni2,,,,,,,,020 7792 8788,182 Westbourne Grove,,London,182 Westbourne Grove,,westbourne grove  london
+81,France91,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 55 77 22 83,5 Boulevard Carnot,,Limoges,5 Boulevard Carnot,,boulevard carnot  limoges
+82,Royaume-Uni10,,,,,,,,020 7351 2231,194 King's Rd,,London,194 King's Rd,,king's rd  london
+83,Pays-Bas1,,,,,,,,020 675 9722,78 Pieter Cornelisz Hooftstraat,,Amsterdam,78 Pieter Cornelisz Hooftstraat,,pieter cornelisz hooftstraat  amsterdam
+84,France33,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 35 63 42 07,4 rue du Gros Horloge,,Rouen,4 rue du Gros Horloge,,rue du gros horloge  rouen
+85,France72,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 31 88 38 16,13 Rue Lucien Barri�re,,Deauville,13 Rue Lucien Barri�re,,rue lucien barri�re  deauville
+86,Etats-Unis13,,,,,,,,(617) 630-6653,225 Boylston Street,,Chestnut Hill,225 Boylston Street,,boylston street  chestnut hill
+87,France28,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 44 54 00 60,42 rue des Francs Bourgeois,,Paris,42 rue des Francs Bourgeois,,rue des francs bourgeois  paris
+88,France74,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 88 32 62 71,13 rue de la M�sange,,Strasbourg,13 rue de la M�sange,,rue de la m�sange  strasbourg
+89,France73,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 31 87 41 02,13 rue Edmond Blanc,,Deauville,13 rue Edmond Blanc,,rue edmond blanc  deauville
+90,Belgique4,,,,,,,,050 60 14 17,144 Kustlaan,,Kokke Heist,144 Kustlaan,,kustlaan  kokke heist
+91,France5,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 39 46 33 69,2 Avenue de l'Europe,Printemps V�lizy 2,Velizy,2 Avenue de l'Europe,Printemps V�lizy 2,avenue de l'europe printemps v�lizy velizy
+92,Etats-Unis8,11:00-19:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,(516) 873-2927,630 Old Contry Road 15530,,Garden City,630 Old Contry Road 15530,,old contry road  garden city
+93,Chine4,,,,,,,,021 5283 1598,1168 Nanjing Road West,,Shanghai,1168 Nanjing Road West,,nanjing road west  shanghai
+94,France99,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 91 54 29 48,40 Rue Saint-Ferr�ol,,Marseille,40 Rue Saint-Ferr�ol,,rue saint-ferr�ol  marseille
+95,France95,,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,01 43 29 18 29,1 Rue Vieux Colombier,,Paris,1 Rue Vieux Colombier,,rue vieux colombier  paris
+96,France57,13:00-19:30,11:00-19:30,11:00-19:30,11:00-19:30,11:00-19:30,11:00-19:30,11:00-19:30,01 42 71 81 12,22 rue du Bourg Tibourg,,Paris,22 rue du Bourg Tibourg,,rue du bourg tibourg  paris
+97,Allemagne1,,,,,,,,030 20625037,Franz�sische Strasse 23,,Berlin,Franz�sische Strasse 23,,franz�sische strasse  berlin
+98,France46,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 26 02 23 45,33 Rue Vesle,,Reims,33 Rue Vesle,,rue vesle  reims
+99,Japon2,,,,,,,,093-551-4533,3-1-1 Kyomachi,,Kokurakita-ku,3-1-1 Kyomachi,,3-1-1 kyomachi  kokurakita-ku
+100,Espagne6,,,,,,,,944 24 76 27,46 Gran Via,,Bilbao,46 Gran Via,,gran via  bilbao
+101,Etats-Unis5,,,,,,,,(212) 705-3172,1000 3rd Ave,,NY,1000 3rd Ave,,3rd ave  ny
+102,France55,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 99 61 15 85,23 Rue Foch,,Montpellier,23 Rue Foch,,rue foch  montpellier
+103,Espagne3,,,,,,,,917 02 10 56,27 Calle Almirante,,Madrid,27 Calle Almirante,,calle almirante  madrid
+104,France39,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,03 20 86 00 53,39-45 Rue Nationale,,Lille,39-45 Rue Nationale,,39-45 rue nationale  lille
+105,France75,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 42 78 69 92,118 rue Vieille du Temple,,Paris,118 rue Vieille du Temple,,rue vieille du temple  paris
+106,Royaume-Uni1,,,,,,,,020 7730 1880,140 Sloane Street,,London,140 Sloane Street,,sloane street  london
+107,Royaume-Uni4,,,,,,,,020 7493 3553,400 Oxford Street,,London,400 Oxford Street,,oxford street  london
+108,Belgique1,,,,,,,,03 232 42 51,9 Schuttershofstraat,,Anvers,9 Schuttershofstraat,,schuttershofstraat  anvers
+109,France43,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 88 24 38 01,34 Rue du 22 Novembre,,Strasbourg,34 Rue du 22 Novembre,,rue du novembre  strasbourg
+110,France32,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 35 70 45 01,4 rue du Gros Horloge,,Rouen,4 rue du Gros Horloge,,rue du gros horloge  rouen
+111,France89,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 49 09 10 41,96 bld Jean Jaur�s,,Boulogne Billancourt,96 bld Jean Jaur�s,,bld jean jaur�s  boulogne billancourt
+112,France70,,10:30-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 78 60 55 39,14 Rue �mile Zola,,Lyon,14 Rue �mile Zola,,rue �mile zola  lyon
+113,France49,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 60 42 66 75,3 cours de la Garonne,,Serris,3 cours de la Garonne,,cours de la garonne  serris
+114,France64,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 34 25 12 34,2 rue Cantegril,,Toulouse,2 rue Cantegril,,rue cantegril  toulouse
+115,France29,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 78 84 88 53,42 rue de la R�publique,,Lyon,42 rue de la R�publique,,rue de la r�publique  lyon
+116,Italie7,,,,,,,,055 238 2301,1 Piazza Repubblica,,Firenze,1 Piazza Repubblica,,piazza repubblica  firenze
+117,Espagne5,,,,,,,,934 67 63 29,73 Paseo de Gracia,,Barcelona,73 Paseo de Gracia,,paseo de gracia  barcelona
+118,France14,09:30-20:00,,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,02 47 66 21 18,77 Rue Nationale,,Tours,77 Rue Nationale,,rue nationale  tours
+119,Royaume-Uni8,11:30-18:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,020 7201 8684,109-125 Knightsbridge,,London,109-125 Knightsbridge,,109-125 knightsbridge  london
+120,France37,,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,04 93 81 78 50,4 avenue de Su�de,,Nice,4 avenue de Su�de,,avenue de su�de  nice
+121,Etats-Unis 14,12:00-17:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,(310) 456-7105,3866 Cross Creek Rd,,Malibu,3866 Cross Creek Rd,,cross creek rd  malibu
+122,France17,,10:30-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 78 42 52 88,7 rue du Plat,,Lyon,7 rue du Plat,,rue du plat  lyon
+123,France68,,,10:30-18:30,10:30-18:30,10:30-18:30,10:30-18:30,10:30-18:30,03 20 55 19 26,17 rue de la Monnaie,,Lille,17 rue de la Monnaie,,rue de la monnaie  lille
+124,Japon11,,,,,,,,047-411-4431,7-7-1 Honcho,,Funabashi,7-7-1 Honcho,,7-7-1 honcho  funabashi
+125,France117,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,09 64 10 17 94,Les Terrasses du Port,Quai du Lazaret,Marseille,Les Terrasses du Port,Quai du Lazaret,les terrasses du port quai du lazaret marseille
+126,Allemagne6,,,,,,,,0711 51886971,Marktstra�e 1,,Stuttgart,Marktstra�e 1,,marktstra�e  stuttgart
+127,Japon4,,,,,,,,03-3341-3251,3-14-1 Shinjuku,,Shinjuku-ku,3-14-1 Shinjuku,,3-14-1 shinjuku  shinjuku-ku
+128,France62,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 28 08 91 72,20 Rue de la Marne,,Nantes,20 Rue de la Marne,,rue de la marne  nantes
+129,France110,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 20 55 64 29,13 Rue des Chats Bossus,,Lille,13 Rue des Chats Bossus,,rue des chats bossus  lille
+130,France122,,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,10:30-19:00,01 42 60 66 28,57 Rue Saint Roch,,Paris,57 Rue Saint Roch,,rue saint roch  paris
+131,France103,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 42 60 87 13,Carrousel du Louvre,Rue de Rivoli,Paris,Carrousel du Louvre,Rue de Rivoli,carrousel du louvre rue de rivoli paris
+132,Allemagne3,,,,,,,,030 21018084,Wilmersdorfer stra�e 118,,Berlin,Wilmersdorfer stra�e 118,,wilmersdorfer stra�e  berlin
+133,France98,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 59 54 93 60,1 Avenue Reine Victoria,,Biarritz,1 Avenue Reine Victoria,,avenue reine victoria  biarritz
+134,Turquie2,,,,,,,,(0216) 410 2215,"Bagdat Cad, NO 447/B",,,"Bagdat Cad, NO 447/B",,"bagdat cad, no 447/b  "
+135,Italie5,,,,,,,,055 295625,17/19 Via della Vigna Nuova,,Firenze,17/19 Via della Vigna Nuova,,17/19 via della vigna nuova  firenze
+136,France35,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 91 33 64 88,4 Rue Sainte,,Marseille,4 Rue Sainte,,rue sainte  marseille
+137,Royaume-Uni11,12:00-18:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,020 7591 3810,297-299 Brompton Road,,London,297-299 Brompton Road,,297-299 brompton road  london
+138,Gr�ce1,,,,,,,,21 0364 0222,Voukourestiou no 13,,Ath�nes,Voukourestiou no 13,,voukourestiou no  ath�nes
+139,Portugal1,,,,,,,,21 342 6316,84-88 Avenida da Liberdade,,Lisboa,84-88 Avenida da Liberdade,,84-88 avenida da liberdade  lisboa
+140,Italie4,,,,,,,,06 8535 0130,Piazza Colonna,,Roma,Piazza Colonna,,piazza colonna  roma
+141,France71,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 93 99 38 37,131 rue d'Antibes,,Cannes,131 rue d'Antibes,,rue d'antibes  cannes
+142,Japon12,,,,,,,,03-3352-1111,3-14-1 Shinjuku,,Shinjuku-ku,3-14-1 Shinjuku,,3-14-1 shinjuku  shinjuku-ku
+143,France53,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 56 44 63 30,25 rue Mably,,Bordeaux,25 rue Mably,,rue mably  bordeaux
+144,Suisse1,,,,,,,,022 310 81 71,10 Grand Rue,,Gen�ve,10 Grand Rue,,grand rue  gen�ve
+145,Italie8,,,,,,,,0421 65106,Via Marco Polo 1,,Noventa di Piave Venezia,Via Marco Polo 1,,via marco polo  noventa di piave venezia
+146,France24,,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 62 27 04 15,50 rue Boulbonne,,Toulouse,50 rue Boulbonne,,rue boulbonne  toulouse
+147,France107,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 79 62 71 82,19 Boulevard de la colonne,,Chamb�ry,19 Boulevard de la colonne,,boulevard de la colonne  chamb�ry
+148,Japon15,,,,,,,,03-6431-0806,3-17-1 Tamagawa,,Setagaya-ku,3-17-1 Tamagawa,,3-17-1 tamagawa  setagaya-ku
+149,France67,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 40 70 97 89,18 rue Fran�ois,,Paris,18 rue Fran�ois,,rue fran�ois  paris
+150,France106,,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-20:00,02 31 91 73 92,108 Bd Mar�chal Leclerc,,Caen,108 Bd Mar�chal Leclerc,,bd mar�chal leclerc  caen
+151,Allemagne7,,,,,,,,0211 86939436,K�nigsallee 2,,Dusseldorf,K�nigsallee 2,,k�nigsallee  dusseldorf
+152,Allemagne2,,,,,,,,030 21018549,Tauentzienstrasse 21/24,,Berlin,Tauentzienstrasse 21/24,,tauentzienstrasse 21/24  berlin
+153,Royaume-Uni14,11:30-17:30,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,,020 7486 3004,"111, Marylebone",,London,"111, Marylebone",,"111, marylebone  london"
+154,Italie9,,,,,,,,051 234694,"Via Farini, 14",,Bologna,"Via Farini, 14",,"via farini,  bologna"
+155,Japon14,,,,,,,,022-302-7566,????19-24,,??????,????19-24,,????19-24  ??????
+156,Royaume-Uni16,11:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-20:00,10:00-19:00,,0131 557 6446,30-34 St Andrew Square,,Edinburgh,30-34 St Andrew Square,,30-34 st andrew square  edinburgh
+157,Canada1,,,,,,,,(403) 269-7341,510 8th Ave SW,,Calgary,510 8th Ave SW,,8th ave sw  calgary
+158,Canada4,,,,,,,,(604) 681-3121,737 Dunsmuir St,,Vancouver,737 Dunsmuir St,,dunsmuir st  vancouver
+159,France102,,10:00-21:00,10:00-21:00,10:00-21:00,10:00-22:00,10:00-21:00,10:00-21:00,01 45 75 14 17,12 rue Linois,,Paris,12 rue Linois,,rue linois  paris
+160,Royaume-Uni15,10:30-17:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-20:00,10:00-19:00,,020 7935 5998,Victoria Quater,107-111 Briggate,Leeds,Victoria Quater,107-111 Briggate,victoria quater 107-111 briggate leeds
+161,France100,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,02 28 08 93 40,20 Rue de la Marne,,Nantes,20 Rue de la Marne,,rue de la marne  nantes
+162,Royaume-Uni13,12:00-18:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,020 7259 0049,Harrods Department Store,87-135 Brompton Road,London,Harrods Department Store,87-135 Brompton Road,harrods department store 87-135 brompton road london
+163,0028 - Galeries Lafayette Femme Bordeaux,09:30-20:00,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,05 56 48 58 66,11 rue Sainte Catherine,Galeries Lafayette Bordeaux,Bordeaux,11 rue Sainte Catherine,Galeries Lafayette Bordeaux,rue sainte catherine galeries lafayette bordeaux bordeaux
+164,France112,14:00-19:00,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,10:30-19:30,09 64 15 09 80,2 Place de la Porte Maillot,C.Cial Palais des Congr�s,Paris,2 Place de la Porte Maillot,C.Cial Palais des Congr�s,place de la porte maillot c.cial palais des congr�s paris
+165,Singapour1,,,,,,,,6735 8838,260 Orchard Road,,Singapour,260 Orchard Road,,orchard road  singapour
+166,France121,12:00-19:30,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,01 53 76 39 33,12 Rond point des Champs Elys�es,,Paris,12 Rond point des Champs Elys�es,,rond point des champs elys�es  paris
+167,0103 - GL Femme Lille,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-21:00,10:00-21:00,03 20 86 75 20,6 rue de la Rivierette,,Lille,6 rue de la Rivierette,,rue de la rivierette  lille
+168,Canada2,,,,,,,,(403) 269-7341,510 8th Ave SW,,Calgary,510 8th Ave SW,,8th ave sw  calgary
+169,Turquie1,,,,,,,,(0212) 232 5766,Vali Kona?? Caddesi No:69,,,Vali Kona?? Caddesi No:69,,vali kona?? caddesi no:69  
+170,Suisse6,,,,,,,,021 312 39 10,4 rue de la Paix,,Lausanne,4 rue de la Paix,,rue de la paix  lausanne
+171,Ukraine1,,,,,,,,044 364 3525,"?????????? ???????, 1?",,????,"?????????? ???????, 1?",,"?????????? ???????, 1?  ????"
+172,France23,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:30,03 20 20 08 18,44 Rue Mail De Lannoy,McArthurGlen Roubaix,Roubaix,44 Rue Mail De Lannoy,McArthurGlen Roubaix,rue mail de lannoy mcarthurglen roubaix roubaix
+173,France52,,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,09:30-19:30,04 78 38 06 45,26 rue Thomassin,,Lyon,26 rue Thomassin,,rue thomassin  lyon
+174,Espagne10,,,,,,,,951 27 91 40,"Calle de Ram�n Areces, S/N",,Marbella,"Calle de Ram�n Areces, S/N",,"calle de ram�n areces, s/n  marbella"
+175,Luxembourg1,,,,,,,,27 99 65 91,"31, rue Philippe II",,Luxembourg,"31, rue Philippe II",,"31, rue philippe ii  luxembourg"
+176,France76,,,10:00-20:00,10:00-20:00,,10:00-21:00,10:00-20:00,01 45 44 22 30,24 rue de S�vres,Bon March�,Paris,24 rue de S�vres,Bon March�,rue de s�vres bon march� paris
+177,France120,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,04 94 42 10 88,RN 98,,La Valette du Var,RN 98,,rn  la valette du var
+178,Italie3,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 7639 0404,"18,Via santo spirito",,Milano,"18,Via santo spirito",,"18,via santo spirito  milano"
+179,France115,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 99 92 30 77,5 Rue du Bosphore,,Rennes,5 Rue du Bosphore,,rue du bosphore  rennes
+180,France104,12:00-20:00,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,10:30-20:00,01 53 76 39 82,35 avenue des champs elys�es,,Paris,35 avenue des champs elys�es,,avenue des champs elys�es  paris
+181,Japon17,,,,,,,,045-321-8707,1-6-31 Minamisaiwai,Nishi-ku,Yokohama-shi,1-6-31 Minamisaiwai,Nishi-ku,1-6-31 minamisaiwai nishi-ku yokohama-shi
+182,Etats-Unis15,12:00-17:00,,10:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,10:00-18:00,(970) 544-1961,218 S Mill St,,Aspen,218 S Mill St,,s mill st  aspen
+183,France9,10:00-20:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 45 24 36 72,91 Avenue Paul Doumer,,Paris,91 Avenue Paul Doumer,,avenue paul doumer  paris
+184,0102 - Galeries Lafayettes Homme Bordeaux,09:30-20:00,,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,09:30-20:00,05 57 78 14 25,11 rue Sainte Catherine,Galeries Lafayette Bordeaux,Bordeaux,11 rue Sainte Catherine,Galeries Lafayette Bordeaux,rue sainte catherine galeries lafayette bordeaux bordeaux
+185,Canada3,10:00-19:00,10:00-19:00,10:00-19:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-19:00,(604) 681-3121,737 Dunsmuir St,,Vancouver,737 Dunsmuir St,,dunsmuir st  vancouver
