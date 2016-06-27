@@ -22,7 +22,7 @@ def get_response(sentence):
         result_shop = check_shops(keywords, sentence)
         result_shop = handle_shop_results(result_shop)
         if result_shop == 0:
-            return "Désolé je ne comprend pas ce que vous voulez dire."
+            return "Désolé je ne comprends pas ce que vous voulez dire."
         else:
             return result_shop
     if result_product['found']:
@@ -50,12 +50,14 @@ def check_prices(keywords):
 
 def check_shops(keywords, sentence):
     keywords_set = set(keywords)
-    all_words = [elem.split(" ") for elem in df_shop["Words"]]
+    all_words = [keywords_fr.extract(elem) for elem in df_shop["Words"]]
     common = [set(mag).intersection(keywords_set) for mag in all_words]
     scores = [len(com) for com in common]
     args_val = np.argwhere(scores == np.amax(scores)).flatten().tolist()
     max_elem = args_val[0]
+    print keywords
     if len(args_val) == 1:
+        print df_shop["Code de magasin"].iloc[max_elem]
         if len(keywords_set.intersection({'num', 'telephone', 'numero'})) > 0:
             return {'type_': 'number', 'product': df_shop["Code de magasin"].iloc[max_elem],
                     'result': df_shop[u"Numéro de téléphone principal"].iloc[max_elem]}
@@ -96,4 +98,5 @@ if __name__ == '__main__':
     print(get_response("Hello quel est prix du sac candide Large Cuir"))
     print(get_response("Hello a quelle heure ouvre le magasin rue francois 1er"))
     print(get_response("Hello a quelle heure ouvre le magasin rue francois 1er demain"))
-print(get_response("Hello"))
+    print(get_response("Hello quand ouvre le magasin de cannes rue d'antibes 1er demain"))
+    print(get_response("Hello"))
