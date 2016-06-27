@@ -77,18 +77,18 @@ def check_shops(keywords, sentence):
 
 
 def handle_shop_results(results):
-    if results['type_'] == 'hours':
-        if isinstance(results['result'], float):
-            return "Le magasin est fermé le %s." % results['additional_data']['day_of_week']
-        return "Le magasin ouvre le %s à %s jusqu'à %s." % (results['additional_data']['day_of_week'],
-                                                             results['result'].split('-')[0],
-                                                             results['result'].split('-')[1])
-    if results['type_'] == 'place':
-        return "Le magasin se trouve au %s" % results['result']
-    if results['type_'] == 'number':
-        return "Le numero du magasin est le: " % results['result']
-    else:
-        return 0
+    if results is not None:
+        if results['type_'] == 'hours':
+            if isinstance(results['result'], float):
+                return "Le magasin est fermé le %s." % results['additional_data']['day_of_week']
+            return "Le magasin ouvre le %s à %s jusqu'à %s." % (results['additional_data']['day_of_week'],
+                                                                 results['result'].split('-')[0],
+                                                                 results['result'].split('-')[1])
+        if results['type_'] == 'place':
+            return "Le magasin se trouve au %s" % results['result']
+        if results['type_'] == 'number':
+            return "Le numero du magasin est le: " % results['result']
+    return 0
 
 
 if __name__ == '__main__':
@@ -96,3 +96,4 @@ if __name__ == '__main__':
     print(get_response("Hello quel est prix du sac candide Large Cuir"))
     print(get_response("Hello a quelle heure ouvre le magasin rue francois 1er"))
     print(get_response("Hello a quelle heure ouvre le magasin rue francois 1er demain"))
+print(get_response("Hello"))
