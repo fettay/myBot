@@ -8,7 +8,6 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-
 @app.route('/', methods=['GET'])
 def verify():
     # when the endpoint is registered as a webhook, it must
@@ -23,9 +22,7 @@ def verify():
 
 @app.route('/', methods=['POST'])
 def webook():
-
     # endpoint for processing incoming messaging events
-
     data = request.get_json()
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
 
