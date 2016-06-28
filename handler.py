@@ -100,3 +100,4 @@ if __name__ == '__main__':
     print(get_response("Hello a quelle heure ouvre le magasin rue francois 1er demain"))
     print(get_response("Hello quand ouvre le magasin de cannes rue d'antibes 1er demain"))
     print(get_response("Hello"))
+    print get_response(u'La boutique de Lille rue de la monnaie est elle ouverte le 16 Juin prochain ?')
