@@ -15,14 +15,14 @@
 13,Espagne9,,,,,,,,963 51 49 10,C/Marques de dos aguas 7,,Valencia,C/Marques de dos aguas 7,,c/marques de dos aguas  valencia
 14,Espagne8,,,,,,,,917 70 49 95,79 Raimudo Fernandez Villaverde,,Madrid,79 Raimudo Fernandez Villaverde,,raimudo fernandez villaverde  madrid
 15,Royaume-Uni6,,,,,,,,020 8332 3004,22 Hill Street Richmond,,London,22 Hill Street Richmond,,hill street richmond  london
-16,France84,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 41 43 35 17,6 rue d'Alsace,,Angers,6 rue d'Alsace,,rue d'alsace  angers
+16,France84,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 41 43 35 17,6 rue d'Alsace,,Angers,6 rue d'Alsace,,rue alsace  angers
 17,France26,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 34 33 24 06,4 Rue Lapeyrouse,Galeries Lafayette,Toulouse,4 Rue Lapeyrouse,Galeries Lafayette,rue lapeyrouse galeries lafayette toulouse
 18,Etats-Unis6,,,,,,,,(212) 396-3800,992 Madison Ave,,NY,992 Madison Ave,,madison ave  ny
 19,France87,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 31 88 81 64,104 Rue Eugène Colas,,Deauville,104 Rue Eugène Colas,,rue eugène colas  deauville
 20,France25,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,09 54 63 81 05,4 Rue Lapeyrouse,Galeries Lafayette,Toulouse,4 Rue Lapeyrouse,Galeries Lafayette,rue lapeyrouse galeries lafayette toulouse
 21,France42,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,01 48 87 46 53,36 rue de la Verrerie,,Paris,36 rue de la Verrerie,,rue de la verrerie  paris
 22,Japon7,,,,,,,,093-551-4533,3-1-1 Kyomachi,,Kokurakita-ku,3-1-1 Kyomachi,,3-1-1 kyomachi  kokurakita-ku
-23,France4,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 34 88 66 00,2 Avenue de l'Europe,Printemps Vélizy 2,Vélizy,2 Avenue de l'Europe,Printemps Vélizy 2,avenue de l'europe printemps vélizy vélizy
+23,France4,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 34 88 66 00,2 Avenue de l'Europe,Printemps Vélizy 2,Vélizy,2 Avenue de l'Europe,Printemps Vélizy 2,avenue de europe printemps vélizy vélizy
 24,Suisse5,,,,,,,,022 310 64 44,1 rue du Perron,,Genève,1 rue du Perron,,rue du perron  genève
 25,France16,,10:30-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 42 38 65 08,7 Rue Marius Reynaud,,Aix en Provence,7 Rue Marius Reynaud,,rue marius reynaud  aix en provence
 26,France34,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 87 62 05 14,4 rue Winston Churchill,,Metz,4 rue Winston Churchill,,rue winston churchill  metz
@@ -90,7 +90,7 @@
 88,France74,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,03 88 32 62 71,13 rue de la Mésange,,Strasbourg,13 rue de la Mésange,,rue de la mésange  strasbourg
 89,France73,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,02 31 87 41 02,13 rue Edmond Blanc,,Deauville,13 rue Edmond Blanc,,rue edmond blanc  deauville
 90,Belgique4,,,,,,,,050 60 14 17,144 Kustlaan,,Kokke Heist,144 Kustlaan,,kustlaan  kokke heist
-91,France5,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 39 46 33 69,2 Avenue de l'Europe,Printemps Vélizy 2,Velizy,2 Avenue de l'Europe,Printemps Vélizy 2,avenue de l'europe printemps vélizy velizy
+91,France5,10:00-20:00,,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,10:00-20:00,01 39 46 33 69,2 Avenue de l'Europe,Printemps Vélizy 2,Velizy,2 Avenue de l'Europe,Printemps Vélizy 2,avenue de europe printemps vélizy velizy
 92,Etats-Unis8,11:00-19:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,10:00-21:00,(516) 873-2927,630 Old Contry Road 15530,,Garden City,630 Old Contry Road 15530,,old contry road  garden city
 93,Chine4,,,,,,,,021 5283 1598,1168 Nanjing Road West,,Shanghai,1168 Nanjing Road West,,nanjing road west  shanghai
 94,France99,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 91 54 29 48,40 Rue Saint-Ferréol,,Marseille,40 Rue Saint-Ferréol,,rue saint-ferréol  marseille
@@ -140,7 +140,7 @@
 138,Grèce1,,,,,,,,21 0364 0222,Voukourestiou no 13,,Athènes,Voukourestiou no 13,,voukourestiou no  athènes
 139,Portugal1,,,,,,,,21 342 6316,84-88 Avenida da Liberdade,,Lisboa,84-88 Avenida da Liberdade,,84-88 avenida da liberdade  lisboa
 140,Italie4,,,,,,,,06 8535 0130,Piazza Colonna,,Roma,Piazza Colonna,,piazza colonna  roma
-141,France71,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 93 99 38 37,131 rue d'Antibes,,Cannes,131 rue d'Antibes,,rue d'antibes  cannes
+141,France71,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,04 93 99 38 37,131 rue d'Antibes,,Cannes,131 rue d'Antibes,,rue antibes  cannes
 142,Japon12,,,,,,,,03-3352-1111,3-14-1 Shinjuku,,Shinjuku-ku,3-14-1 Shinjuku,,3-14-1 shinjuku  shinjuku-ku
 143,France53,10:00-19:00,,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,10:00-19:00,05 56 44 63 30,25 rue Mably,,Bordeaux,25 rue Mably,,rue mably  bordeaux
 144,Suisse1,,,,,,,,022 310 81 71,10 Grand Rue,,Genève,10 Grand Rue,,grand rue  genève

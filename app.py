@@ -5,8 +5,17 @@ import sys
 import json
 import requests
 from flask import Flask, request
+import pandas as pd
 
 app = Flask(__name__)
+
+DATA_LOC = 'Data/'
+ALL_OPT = ['product_price', 'shop_hours', 'shop_location', 'shop_telephone']
+PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv')
+SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv')
+hdl = handler.Handler(opt_list=ALL_OPT, shops=SHOPS, products=PRODUCTS)
+
+
 
 @app.route('/', methods=['GET'])
 def verify():
@@ -37,7 +46,9 @@ def webook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
                     try:
-                        send_message(sender_id, handler.get_response(message_text))
+                        cls_result = hdl.classify(message_text)
+                        responses_message = hdl.responses_formatter(cls_result, message_text)
+                        send_message(sender_id, responses_message)
                     except:
                         print log("Error sending message")
                 if messaging_event.get("delivery"):  # delivery confirmation

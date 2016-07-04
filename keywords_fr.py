@@ -499,8 +499,12 @@ KEYWORDS = set([
         "étions"
 ])
 
-def extract(sentence):
+def extract(sentence, to_keep=None):
     sentence = sentence.lower()
     all_words = set([w for w in re.split('\W', sentence) if w])
+    keep_words = set()
+    if to_keep is not None:
+        keep_words = {tk for tk in to_keep if tk in all_words}
     keywords = all_words - all_words.intersection(KEYWORDS)
-    return list(keywords)
+    keywords.update(keep_words)
+    return keywords
