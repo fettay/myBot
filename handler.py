@@ -140,9 +140,7 @@ def check_shops(keywords, sentence):
     scores = [len(com) for com in common]
     args_val = np.argwhere(scores == np.amax(scores)).flatten().tolist()
     max_elem = args_val[0]
-    print keywords
     if len(args_val) == 1:
-        print df_shop["Code de magasin"].iloc[max_elem]
         if len(keywords_set.intersection({'num', 'telephone', 'numero'})) > 0:
             return {'type_': 'number', 'product': df_shop["Code de magasin"].iloc[max_elem],
                     'result': df_shop[u"Numéro de téléphone principal"].iloc[max_elem]}

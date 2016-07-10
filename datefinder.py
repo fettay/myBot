@@ -280,7 +280,7 @@ def find_dates(text, source=False, index=False, strict=False):
 if __name__ == '__main__':
     match = find_dates(u"Hello a quelle heure ouvre le magasin rue francois 1er demain", source=True)
     for mt in match:
-        print mt
+        print(mt)
     match = find_dates(u"Rendez vous lundi a 12h30", source=True)
     for mt in match:
-        print mt
+        print(mt)
