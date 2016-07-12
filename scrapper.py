@@ -1,0 +1,2 @@
+__author__ = 'raphaelfettaya'
+URL = "https://www.google.co.il/search?q=bague+eclaire+zadig+et+voltaire&espv=2&biw=1320&bih=635&source=lnms&tbm=isch&sa=X&sqi=2&ved=0ahUKEwiviLGDlO7NAhWqB8AKHRPmAhEQ_AUIBigB"

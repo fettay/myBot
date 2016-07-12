@@ -9,7 +9,8 @@ DUMMY_VOCAB = {
     'product_price': ['prix', 'coute', 'coûte'],
     'shop_hours': ['heure', 'ouvre', 'horaires', 'ferme', '*dates', 'boutique', 'magasin'],
     'shop_location': ['où', 'adresse', 'boutique', 'magasin'],
-    'shop_telephone': ['numero', 'telephone', 'numéro', 'téléphone', 'boutique', 'magasin']
+    'shop_telephone': ['numero', 'telephone', 'numéro', 'téléphone', 'boutique', 'magasin'],
+    'product_view': ['photos', 'photo']
 }
 
 DEFAULT_TO_KEEP = ['où']

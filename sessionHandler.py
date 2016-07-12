@@ -1,4 +1,3 @@
-import redis
 import json
 from session import Session
 from datetime import datetime
@@ -7,8 +6,8 @@ TIME_FORMAT = "%d %m %y %H:%M:%S"
 
 class SessionHandler(object):
 
-    def __init__(self, host='localhost', port=6379, db=0):
-        self.redis_db = redis.StrictRedis(host=host, port=port, db=db)
+    def __init__(self, redis):
+        self.redis_db = redis
 
     def create_session(self, id, **kwargs):
         kwargs['created'] = datetime.now().strftime(TIME_FORMAT)

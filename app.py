@@ -6,15 +6,15 @@ import requests
 from flask import Flask, request
 import pandas as pd
 from sessionHandler import SessionHandler
-from session import Session
+import redis
+
 
 app = Flask(__name__)
 
 DATA_LOC = 'Data/'
-ALL_OPT = ['product_price', 'shop_hours', 'shop_location', 'shop_telephone']
 PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv')
 SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv')
-hdl = handler.Handler(opt_list=ALL_OPT, shops=SHOPS, products=PRODUCTS)
+hdl = handler.Handler(opt_list=handler.ALL_OPT, shops=SHOPS, products=PRODUCTS)
 
 # Test setting
 TEST_MODE = True if len(sys.argv) > 1 and sys.argv[1] == 'test' else False
@@ -23,11 +23,12 @@ if TEST_MODE:
     ACCESS_TOKEN = ""
     REDIS_HOST = 'localhost'
     REDIS_PORT = 6379
+    r = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 else:
     FB_URL = "https://graph.facebook.com/v2.6/me/"
     ACCESS_TOKEN = os.environ["PAGE_ACCESS_TOKEN"]
-    REDIS_HOST = 'localhost'
-    REDIS_PORT = 6379
+    REDIS_URL = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+    r = redis.from_url(REDIS_URL)
 
 
 PARAMS = {
@@ -37,7 +38,9 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-sess_handler = SessionHandler(host=REDIS_HOST, port=REDIS_PORT)
+sess_handler = SessionHandler(r)
+
+
 @app.route('/', methods=['GET'])
 def verify():
     # when the endpoint is registered as a webhook, it must
@@ -72,7 +75,8 @@ def webook():
                     if cls_result is not None:
                         current_sess.set(classify=cls_result)
                     responses_message = hdl.responses_formatter(cls_result, message_text)
-                    send_message(sender_id, responses_message)
+                    action_fn = globals()[responses_message[0]]  # Requested action
+                    action_fn(sender_id, responses_message[1])
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
 
@@ -97,10 +101,23 @@ def send_message(recipient_id, message_text):
             "text": message_text
         }
     })
+    if TEST_MODE:
+        # print(message_text)
+        return
+
     r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
+
+
+def send_carousel(recipient_id, formatted_carousel):
+    formatted_carousel["recipient"] = {"id": recipient_id}
+    r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=formatted_carousel)
+    if r.status_code != 200:
+        log(r.status_code)
+        log(r.text)
+
 
 
 def set_greetings(greeting):
@@ -121,7 +138,7 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 @app.errorhandler(500)
 def internal_error(error):
-    print(error)
+    print("ERROR:" + str(error))
     return "500 error"
 
 if __name__ == '__main__':
