@@ -113,7 +113,8 @@ def send_message(recipient_id, message_text):
 
 def send_carousel(recipient_id, formatted_carousel):
     formatted_carousel["recipient"] = {"id": recipient_id}
-    r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=formatted_carousel)
+    data = json.dumps(formatted_carousel)
+    r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
@@ -126,6 +127,7 @@ def set_greetings(greeting):
                     "text": greeting
                 }
             }
+    data = json.dumps(data)
     r = requests.post(FB_URL + "thread_settings", params=PARAMS, headers=HEADERS, data=data)
     if r.status_code != 200:
         log(r.status_code)
