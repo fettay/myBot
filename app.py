@@ -112,7 +112,7 @@ def send_message(recipient_id, message_text):
 
 
 def send_carousel(recipient_id, formatted_carousel):
-    formatted_carousel["recipient"] = {"id": "10153410136940876"}
+    formatted_carousel["recipient"] = {"id": recipient_id}
     data = json.dumps(formatted_carousel)
     r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
     if r.status_code != 200:
