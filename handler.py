@@ -105,7 +105,7 @@ class Handler(object):
 def format_carousel(product_list):
     data = {
         "message": {
-            "attachement": {
+            "attachment": {
                 "type": "template",
                 "payload": {
                     "template_type": "generic",
@@ -118,7 +118,7 @@ def format_carousel(product_list):
         format_value = {
             "title": p["product"],
             "image_url": p["picture"],
-            "subtitle": p["price"] + "€",
+            "subtitle": "%d€" % p["price"],
             "buttons": [
                 {
                     "type": "web_url",
@@ -127,7 +127,7 @@ def format_carousel(product_list):
                 }
             ]
         }
-        data["message"]["attachement"]["payload"]["elements"].append(format_value)
+        data["message"]["attachment"]["payload"]["elements"].append(format_value)
     return data
 
 if __name__ == '__main__':

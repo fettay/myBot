@@ -112,7 +112,7 @@ def send_message(recipient_id, message_text):
 
 
 def send_carousel(recipient_id, formatted_carousel):
-    formatted_carousel["recipient"] = {"id": recipient_id}
+    formatted_carousel["recipient"] = {"id": "10153410136940876"}
     data = json.dumps(formatted_carousel)
     r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
     if r.status_code != 200:
@@ -138,6 +138,7 @@ def log(message):  # simple wrapper for logging to stdout on heroku
     print(str(message))
     sys.stdout.flush()
 
+
 @app.errorhandler(500)
 def internal_error(error):
     print("ERROR:" + str(error))
@@ -147,4 +148,5 @@ if __name__ == '__main__':
     DEFAULT_GREETING = "Bonjour, je peux vous indiquez les prix des articles, ou les horaires des magasins."
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    # set_greetings(DEFAULT_GREETING)
+    set_greetings(DEFAULT_GREETING)
+
