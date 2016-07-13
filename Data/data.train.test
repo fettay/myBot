@@ -41,7 +41,7 @@ emplacement du mag des XXX/shop_location
 numero de la boutique de XXX/shop_telephone
 quel est le numero du magasin a XXX/shop_telephone
 telephone du magasin a XXX/shop_telephone
-comment je peux appeler la boutique des champs/shop_telephone
+comment je peux appeler la boutique des XXX/shop_telephone
 peux tu me montrer toutes les chaussures/product_view
 a quoi ressemble le sac XXX/product_view
 je peux voir les jean de la collection hiver stp/product_view
@@ -56,7 +56,7 @@ Bonjour, le magasin XXX est-il ouvert a 9h ? /shop_hours
 A quelle heure fermez vous aujourd'hui ? /shop_hours
 Vous ouvrez a quelle heure demain ? /shop_hours
 Vous fermez a quelle heure demain ? /shop_hours
-Avez vous un magasin a Odeon ? /shop_location 
+Avez vous un magasin a XXX ? /shop_location 
 Ou se trouve le magasin de XXX ? /shop_location 
 Ou se trouve le magasin le plus proche des XXX ? /shop_location 
 Quel est le numero de telephone du magasin XXX ? /shop_telephone
