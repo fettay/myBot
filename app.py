@@ -69,10 +69,13 @@ def webook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     # Get Session
                     current_sess = sess_handler.get(sender_id)
-                    if 'classify' in current_sess:
-                        print("Was a %s" % current_sess["classify"])
-                    cls_result = hdl.classify(message_text)
-                    if cls_result is not None:
+                    # Handle response: De quelle ... parlez vous?
+                    if 'classify' in current_sess and current_sess['classify'][1] == 1:
+                        cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
+                    else:
+                        cls_result = hdl.classify(message_text)
+
+                    if cls_result[0] is not None:
                         current_sess.set(classify=cls_result)
                     responses_message = hdl.responses_formatter(cls_result, message_text)
                     action_fn = globals()[responses_message[0]]  # Requested action
@@ -90,6 +93,8 @@ def webook():
 
 
 def send_message(recipient_id, message_text):
+    if "RECIPIENT_TEST" in os.environ:
+        recipient_id = os.environ['RECIPIENT_TEST']
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
@@ -112,6 +117,8 @@ def send_message(recipient_id, message_text):
 
 
 def send_carousel(recipient_id, formatted_carousel):
+    if os.environ['RECIPIENT_TEST']:
+        recipient_id = os.environ['RECIPIENT_TEST']
     formatted_carousel["recipient"] = {"id": recipient_id}
     data = json.dumps(formatted_carousel)
     r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
@@ -148,5 +155,5 @@ if __name__ == '__main__':
     DEFAULT_GREETING = "Bonjour, je peux vous indiquez les prix des articles, ou les horaires des magasins."
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    set_greetings(DEFAULT_GREETING)
+    # set_greetings(DEFAULT_GREETING)
 

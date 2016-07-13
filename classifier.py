@@ -35,7 +35,7 @@ def dummy_classifier(sentence, dict_df, opt_list):
     :param sentence:
     :param dict_df:
     :param opt_list:
-    :return: class, category_of_result, list of relevant result indice
+    :return: class, category_of_result, list of relevant result indices
     """
 
     def compute_score(kw_compare_res):
@@ -78,8 +78,14 @@ def item_finder(sentence, dict_df, class_):
     :param sentence: sentence
     :param dict_df: dict of dataframes
     :param class_: predicted class
-    :return: list of indices of items in the relevant df
+    :return:class, category_of_result, list of relevant result indices
     """
     keywords = keywords_fr.extract(sentence)
-    df_data = getattr(handler, dict_df[class_])
-    return compare_kw(keywords, df_data['Words'])[2]
+    df_data = dict_df[handler.DATA_CONTAINERS[class_][0]]
+    compared = compare_kw(keywords, df_data['Words'])
+    if len(compared[2]) > 1:
+        return class_, 1, compared[2]
+    elif max(compared[1]) == 0:
+        return None, -1, []
+    else:
+        return class_, 0, compared[2]

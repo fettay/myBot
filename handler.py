@@ -37,6 +37,7 @@ class Handler(object):
         self.SHOPS = shops
         self.format_files()
 
+
     def format_files(self):
         """
         Only add a column with a bag of words in all dataframes
@@ -54,10 +55,17 @@ class Handler(object):
         if self.PRODUCTS is not None:
             self.PRODUCTS["Words"] = self.PRODUCTS.apply(lambda x: x["product"].lower(), axis=1)
 
-    def classify(self, sentence):
+    def classify(self, sentence, class_=None):
+        """
+        :param sentence: sentence received
+        :param class_: if a class_ is already computed
+        :return: formatted result see classifier
+        """
         list_df = {'SHOPS': self.SHOPS, 'PRODUCTS': self.PRODUCTS}
-        return classifier.dummy_classifier(sentence, list_df, self.OPT_LIST)
-
+        if class_ is None:
+            return classifier.dummy_classifier(sentence, list_df, self.OPT_LIST)
+        else:
+            return classifier.item_finder(sentence, list_df, class_)
 
     def responses_formatter(self, result, sentence):
         """

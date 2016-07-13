@@ -10,6 +10,12 @@ class Session(object):
     def __get__(self, k):
         return self.data[k]
 
+    def __getitem__(self, item):
+        return self.data[item]
+
+    def __contains__(self, item):
+        return item in self.data
+
     def __set__(self, k, v):
         self.data[k] = v
         to_change = {k: v}

@@ -5,3 +5,4 @@ regex==2015.11.22
 requests==2.9.1
 dateparser==0.4.0
 redis==2.10.5
+sklearn=0.17.1
