@@ -16,25 +16,31 @@ DUMMY_VOCAB = {
 DEFAULT_TO_KEEP = ['où']
 
 
+
+def compare_kw(keywords_set, list_data):
+    """
+    :param keywords_set: set of sentence's kw
+    :param list_data: list of bag of words
+    :return: biggest list of common strings, scores, arg max of scores
+    """
+    common = [set(prod.split(' ')).intersection(keywords_set) for prod in list_data]
+    scores = [len(com) for com in common]
+    args_val = np.argwhere(scores == np.amax(scores)).flatten().tolist()
+    return common, scores, args_val
+
+
 def dummy_classifier(sentence, dict_df, opt_list):
     """
     Compare result with other heuristics values
     :param sentence:
     :param dict_df:
     :param opt_list:
-    :return: class, categorie_of_result, list of relevant result indice
+    :return: class, category_of_result, list of relevant result indice
     """
-
-    def compare_kw(keywords_set, list_data):
-        common = [set(prod.split(' ')).intersection(keywords_set) for prod in list_data]
-        scores = [len(com) for com in common]
-        args_val = np.argwhere(scores == np.amax(scores)).flatten().tolist()
-        return common, scores, args_val
 
     def compute_score(kw_compare_res):
         common, scores, args_val = kw_compare_res
         return scores[args_val[0]] if len(args_val)/len(scores) < .1 else 0
-
 
     # FIND PROD AND SHOPS
     keywords_set = keywords_fr.extract(sentence, to_keep=DEFAULT_TO_KEEP)
@@ -58,11 +64,22 @@ def dummy_classifier(sentence, dict_df, opt_list):
     max_scores = scores_classes[max_class]
     max_res = df_comparitions[handler.DATA_CONTAINERS[max_class][0]]
 
-
-    # GET CATEGORIE
+    # GET CATEGORY
     if max_scores == 0:  # No class found
         return None, -1, []
     if len(max_res[2]) > 1 and len(max_res[2]) < .1 * len(max_res[1]) :  # List of relevant items
         return max_class, 1, max_res[2]
     else:  # All good
         return max_class, 0, max_res[2]
+
+
+def item_finder(sentence, dict_df, class_):
+    """
+    :param sentence: sentence
+    :param dict_df: dict of dataframes
+    :param class_: predicted class
+    :return: list of indices of items in the relevant df
+    """
+    keywords = keywords_fr.extract(sentence)
+    df_data = getattr(handler, dict_df[class_])
+    return compare_kw(keywords, df_data['Words'])[2]
