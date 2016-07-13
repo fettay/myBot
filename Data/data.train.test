@@ -1,0 +1,67 @@
+Combien coute votre jean le moins cher ? /price_product
+Combien coute une chemise en jean ? /price_product
+Avez vous un sac qui coute moins de 100E ? /price_product
+Combien coute la retouche ? /price_product
+Le magasin de XXX est il ouvert ? /shop_hours
+a quelle heure ferme le magasin du XXX ? /shop_hours
+Quelles sont les horaires de vos boutiques a XXX ?/shop_hours
+Quelle boutique est ouverte apres 18h30?/shop_hours
+etes vous ouvert le dimanche ?/shop_hours
+Quelles boutiques ouvriront le 14 juillet  ?/shop_hours
+J'aimerais passer dans la semaine, je finis a 18h30 quelle boutique est ouverte ? /shop_hours
+Quelles sont vos boutiques a XXX ?/shop_location
+Ya une boutique a XXX ?/shop_location
+Je peux vous appeler ?/shop_telephone
+C'est quoi votre numero ?/shop_telephone
+J'aimerais appeler la boutique de XXX /shop_telephone
+Quel est le numero de XXX a XXX ?/shop_telephone
+Je peux entrer en relation avec une boutique svp /shop_telephone
+Je cherche un jean /product_view
+Quels sont vos manteaux pour cet hiver ? /product_view
+Vous avez des maillots ?/product_view
+J'aimerais faire un cadeau a ma copine /product_view
+Montre moi le porte monnaie le moins cher /product_view
+Combien coute le le sac XXX ?/price_product
+cb coute le jean XXX ?/price_product
+prix du porte monnaie jaune XXX?/price_product
+A combien est le XXX/price_product
+Le XXX coute cb?/price_product
+le XXX coute combien?/price_product
+combien vaut le XXX/price_product
+il vaut cb le XXX/price_product
+a quelle heure ouvre le magasin de la rue XXX/shop_hours
+quelles sont les horaires de la boutique de XXX/shop_hours
+horaire boutique avenue de XXX/shop_hours
+la boutique des XXX est elle ouverte?/shop_hours
+a quelle heure ferme la boutique boulevard XXX?/shop_hours
+adresse de la boutique des XXX/shop_location
+ou se trouve le magasin des XXX exactement?/shop_location
+envoi l'adresse d'un magasin qui est dans le XXX?/shop_location
+emplacement du mag des XXX/shop_location
+numero de la boutique de XXX/shop_telephone
+quel est le numero du magasin a XXX/shop_telephone
+telephone du magasin a XXX/shop_telephone
+comment je peux appeler la boutique des champs/shop_telephone
+peux tu me montrer toutes les chaussures/product_view
+a quoi ressemble le sac XXX/product_view
+je peux voir les jean de la collection hiver stp/product_view
+envoi les photos des gilet de cet hiver/product_view
+quels sont les couleurs pour le sac candide/product_view
+y a quoi comme modele de jean/product_view
+quels sont les nouveaux modeles de tunisiens/product_view
+Bonjour, pouvez vous me communiquer le prix de XXX ? /price_product 
+Combien coute XXX ? /price_product 
+J'aimerais connaitre le prix de XXX/price_product 
+Bonjour, le magasin XXX est-il ouvert a 9h ? /shop_hours
+A quelle heure fermez vous aujourd'hui ? /shop_hours
+Vous ouvrez a quelle heure demain ? /shop_hours
+Vous fermez a quelle heure demain ? /shop_hours
+Avez vous un magasin a Odeon ? /shop_location 
+Ou se trouve le magasin de XXX ? /shop_location 
+Ou se trouve le magasin le plus proche des XXX ? /shop_location 
+Quel est le numero de telephone du magasin XXX ? /shop_telephone
+Je pourrais voir vos XXX ? /product_view
+Que proposez vous comme robes ? /product_view
+J'ai une soiree et je cherche une tenue habillee, que me proposez vous ? /product_view
+Pour cet ete, vous me proposez quoi comme tenue ? /product_view
+Besoin pour cet hiver d'une tenue, vous me proposez quoi comme tenue ? /product_view
