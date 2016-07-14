@@ -4,9 +4,6 @@ import keywords_fr
 import handler
 import numpy as np
 import datefinder
-# FIX THIS IMPORT
-import sys
-sys.path.append('Algorithms')
 from Algorithms import ai, preprocessing
 from sklearn.externals import joblib
 
