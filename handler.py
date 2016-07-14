@@ -46,9 +46,9 @@ class Handler(object):
         """
         if self.SHOPS is not None:
             def filter_shops(x):
-                res = " ".join([unidecode(elem) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
+                res = " ".join([unidecode(elem.decode('utf-8')) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
                 try:
-                    res += " " + unidecode(x['city'])
+                    res += " " + unidecode(x['city'].decode('utf-8'))
                 except TypeError:
                     pass
                 return res.lower()
@@ -103,8 +103,9 @@ class Handler(object):
             if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
                 return "send_carousel", format_carousel(res_lines)
             if DATA_CONTAINERS[class_][0] == 'SHOPS':
-                shop_desc = res_lines["city"] + "-" + "".join([el for el in res_lines["Adresse"] if not el.isdigit()])
-                list_res = (shop_desc + ", " + res_lines[DATA_CONTAINERS[class_][1]]).values
+                desc = res_lines.apply(lambda x:  x["city"] + "".join(el for el in x["Adresse"]
+                                                                      if not el.isdigit()) + ", ")
+                list_res = (desc + res_lines[DATA_CONTAINERS[class_][1]]).values
                 return "send_message", "De quelle boutique parlez vous? \n{}".format("\n".join(list_res))
                 # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
