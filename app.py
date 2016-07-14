@@ -12,12 +12,13 @@ import fbApi
 app = Flask(__name__)
 
 DATA_LOC = 'Data/'
-PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv')
-SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv')
+PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv').fillna('')
+SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv').fillna('')
 hdl = handler.Handler(opt_list=handler.ALL_OPT, shops=SHOPS, products=PRODUCTS)
 
 # Test setting
 TEST_MODE = True if len(sys.argv) > 1 and sys.argv[1] == 'test' else False
+
 if TEST_MODE:
     FB_URL = "http://localhost:9999/"
     ACCESS_TOKEN = ""
@@ -95,25 +96,23 @@ def send_message(recipient_id, message_text):
 
     print("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
-    data = json.dumps({
+    data = {
         "recipient": {
             "id": recipient_id
         },
         "message": {
             "text": message_text
         }
-    })
+    }
     fbApi.message(params=PARAMS, headers=HEADERS, data=data)
-
 
 
 def send_carousel(recipient_id, formatted_carousel):
-    print("Sending carousel")
+    print("sending carousel to {recipient}".format(recipient=recipient_id))
+
     formatted_carousel["recipient"] = {"id": recipient_id}
-    data = json.dumps(formatted_carousel)
+    data = formatted_carousel
     fbApi.message(params=PARAMS, headers=HEADERS, data=data)
-
-
 
 
 @app.errorhandler(500)

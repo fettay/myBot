@@ -1,5 +1,6 @@
 import re
 from string import punctuation
+from unidecode import unidecode
 
 RGX_HOUR = '([0-9]{1,2}[h|H|:][0-9]{0,2})'
 RPL_HOUR = 'XXhXX'
@@ -45,4 +46,6 @@ def clean_string(string_):
     return remove_symbols(
                 replace_date(
                     replace_time(
-                        replace_price((string_.lower())))))
+                        replace_price(
+                            unidecode(
+                                (string_.lower()))))))

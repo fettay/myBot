@@ -3,11 +3,16 @@ import requests
 import sys
 import app
 import json
+import os
 
 
 def message(params, headers, data):
     # if "RECIPIENT_TEST" in os.environ:
-    #     recipient_id = os.environ['RECIPIENT_TEST']
+    #     data["recipient"]["id"] == os.environ['RECIPIENT_TEST']
+    data = json.dumps(data)
+    if app.TEST_MODE:
+        print(data)
+        return
     r = requests.post(app.FB_URL + "messages", params=params, headers=headers, data=data)
     if r.status_code != 200:
         log(r.status_code)

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+from unidecode import unidecode
 KEYWORDS = set([
         "a",
         "à",
@@ -507,4 +508,6 @@ def extract(sentence, to_keep=None):
         keep_words = {tk for tk in to_keep if tk in all_words}
     keywords = all_words - all_words.intersection(KEYWORDS)
     keywords.update(keep_words)
+    # Remove special chars
+    keywords = {unidecode(kw) for kw in keywords}
     return keywords

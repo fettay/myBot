@@ -6,6 +6,7 @@ import pandas as pd
 import datefinder
 import datetime
 import classifier
+from unidecode import unidecode
 
 DEFAULT_ANSWER = "Desole je n'ai pas compris votre demande."
 DATA_LOC = 'Data/'
@@ -45,9 +46,9 @@ class Handler(object):
         """
         if self.SHOPS is not None:
             def filter_shops(x):
-                res = " ".join([elem for elem in x['Adresse'].split(" ") if not elem.isdigit()])
+                res = " ".join([unidecode(elem) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
                 try:
-                    res += " " + x['city']
+                    res += " " + unidecode(x['city'])
                 except TypeError:
                     pass
                 return res.lower()
@@ -102,7 +103,8 @@ class Handler(object):
             if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
                 return "send_carousel", format_carousel(res_lines)
             if DATA_CONTAINERS[class_][0] == 'SHOPS':
-                list_res = (res_lines["city"] + " " + res_lines[DATA_CONTAINERS[class_][1]]).values
+                shop_desc = res_lines["city"] + "-" + "".join([el for el in res_lines["Adresse"] if not el.isdigit()])
+                list_res = (shop_desc + ", " + res_lines[DATA_CONTAINERS[class_][1]]).values
                 return "send_message", "De quelle boutique parlez vous? \n{}".format("\n".join(list_res))
                 # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
