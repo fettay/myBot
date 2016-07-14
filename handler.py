@@ -75,6 +75,13 @@ class Handler(object):
         :param result: Result from classifier
         :return:Tuple API action, Formatted string example: (send_message, "haha")
         """
+        def extract_day(sentence):
+            date = datefinder.find_dates(sentence)
+            if len(date) >= 1:
+                return date[0].strftime('%A')
+            return datetime.datetime.now().strftime('%A')
+
+
         class_, status, all_prod = result
         if status == 0:
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
@@ -82,13 +89,7 @@ class Handler(object):
             if class_ == 'product_price':
                 return "send_message", "Le prix du {} est de {} euros".format(target["product"], target["price"])
             elif class_ == 'shop_hours':
-                date = datefinder.find_dates(sentence)
-                if len(date) == 1:
-                    day_of_week = date[0].strftime('%A')
-                elif len(date) > 1:
-                    return "send_message", "Je ne sais pas gérer plusieurs dates à la fois."
-                else:
-                    day_of_week = datetime.datetime.now().strftime('%A')
+                day_of_week = extract_day(sentence)
                 res = target[day_of_week]
                 if isinstance(res, float):
                     return "send_message", "Le magasin est fermé le {}".format(DAY_TRANSLATATION[day_of_week])
@@ -107,7 +108,10 @@ class Handler(object):
             if DATA_CONTAINERS[class_][0] == 'SHOPS':
                 desc = res_lines.apply(lambda x:  x["city"] + "".join(el for el in x["Adresse"]
                                                                       if not el.isdigit()) + ", ", axis=1)
-                list_res = (desc + res_lines[DATA_CONTAINERS[class_][1]]).values
+                data_col = DATA_CONTAINERS[class_][1]
+                if class_ == 'shop_hours':
+                    data_col = extract_day(sentence)
+                list_res = (desc + res_lines[data_col]).values
                 return "send_message", "De quelle boutique parlez vous? \n{}".format("\n".join(list_res))
                 # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
