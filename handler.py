@@ -63,7 +63,7 @@ class Handler(object):
         """
         list_df = {'SHOPS': self.SHOPS, 'PRODUCTS': self.PRODUCTS}
         if class_ is None:
-            return classifier.dummy_classifier(sentence, list_df, self.OPT_LIST)
+            return classifier.log_classifier(sentence, list_df)
         else:
             return classifier.item_finder(sentence, list_df, class_)
 

@@ -1,7 +1,7 @@
-Combien coute votre XXX le moins cher ? /price_product
-Combien coute une XXX en XXX ? /price_product
-Avez vous un sac qui XXX moins de 100E ? /price_product
-Combien coute la retouche ? /price_product
+Combien coute votre XXX le moins cher ? /product_price
+Combien coute une XXX en XXX ? /product_price
+Avez vous un sac qui XXX moins de 100E ? /product_price
+Combien coute la retouche ? /product_price
 Le magasin de XXX est il ouvert ? /shop_hours
 a quelle heure ferme le magasin du XXX ? /shop_hours
 Quelles sont les horaires de vos boutiques a XXX ?/shop_hours
@@ -21,14 +21,14 @@ Quels sont vos XXX pour cet hiver ? /product_view
 Vous avez des XXX ?/product_view
 J'aimerais faire un cadeau a ma copine /product_view
 Montre moi le XXX  le moins cher /product_view
-Combien coute le  XXX ?/price_product
-cb coute le XXX ?/price_product
-prix du  XXX?/price_product
-A combien est le XXX/price_product
-Le XXX coute cb?/price_product
-le XXX coute combien?/price_product
-combien vaut le XXX/price_product
-il vaut cb le XXX/price_product
+Combien coute le  XXX ?/product_price
+cb coute le XXX ?/product_price
+prix du  XXX?/product_price
+A combien est le XXX/product_price
+Le XXX coute cb?/product_price
+le XXX coute combien?/product_price
+combien vaut le XXX/product_price
+il vaut cb le XXX/product_price
 a quelle heure ouvre le magasin de la rue XXX/shop_hours
 quelles sont les horaires de la boutique de XXX/shop_hours
 horaire boutique avenue de XXX/shop_hours
@@ -49,8 +49,8 @@ envoi les photos des gilet de cet hiver/product_view
 quels sont les couleurs pour le XXX/product_view
 y a quoi comme modele de XXX/product_view
 quels sont les nouveaux modeles de XXX/product_view
-Bonjour, pouvez vous me communiquer le prix de XXX ? /price_product 
-J'aimerais connaitre le prix de XXX/price_product 
+Bonjour, pouvez vous me communiquer le prix de XXX ? /product_price 
+J'aimerais connaitre le prix de XXX/product_price 
 Bonjour, le magasin XXX est-il ouvert a 9h ? /shop_hours
 A quelle heure fermez vous aujourdhui ? /shop_hours
 Vous ouvrez a quelle heure demain ? /shop_hours
@@ -94,15 +94,15 @@ mon pote veut un XXX je peux voir ce que vous avez/product_view
 montre moi toutes tes XXX/product_view
 montre moi tous les accessoires pour l ete/product_view
 puis je vois votre nouvelle collection de XXX /product_view
-y a t il des soldes sur XXX/price_product
-y a t il des reductions sur vos XXX/price_product
-donne moi le prix de XXX /price_product
-combien d euro coute XXX /price_product
-combien d euros coute XXX/price_product
-combien d euro coutent XXX/price_product
-combien d euros coutent XXX/price_product 
-cb coute XXX en euro/price_product
-cb coute XXX en euros/price_product
+y a t il des soldes sur XXX/product_price
+y a t il des reductions sur vos XXX/product_price
+donne moi le prix de XXX /product_price
+combien d euro coute XXX /product_price
+combien d euros coute XXX/product_price
+combien d euro coutent XXX/product_price
+combien d euros coutent XXX/product_price 
+cb coute XXX en euro/product_price
+cb coute XXX en euros/product_price
 est ce la boutique des XXX est ouverte ce soir/shop_hours
 est ce que le magasin des XXX est ouvert ce soir/shop_hours
 est ce que la boutique des XXX est ouverte demain/shop_hours

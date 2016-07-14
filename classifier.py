@@ -4,6 +4,11 @@ import keywords_fr
 import handler
 import numpy as np
 import datefinder
+# FIX THIS IMPORT
+import sys
+sys.path.append('Algorithms')
+from Algorithms import ai, preprocessing
+from sklearn.externals import joblib
 
 DUMMY_VOCAB = {
     'product_price': ['prix', 'coute', 'coûte'],
@@ -15,7 +20,7 @@ DUMMY_VOCAB = {
 
 DEFAULT_TO_KEEP = ['où']
 
-
+clf_log, vectorizer_log = ai.load_clf('Classifiers/Log_clf')
 
 def compare_kw(keywords_set, list_data):
     """
@@ -89,3 +94,14 @@ def item_finder(sentence, dict_df, class_):
         return None, -1, []
     else:
         return class_, 0, compared[2]
+
+
+def log_classifier(sentence, dict_df):
+    X = preprocessing.clean_string(sentence)
+    X = vectorizer_log.transform([X])
+    class_ = clf_log.predict(X)[0][1:]
+    return item_finder(sentence, dict_df, class_)
+
+
+# if __name__ == '__main__':
+#     log_classifier('Quel est le prix de la doudoune bleu.', )
