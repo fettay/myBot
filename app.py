@@ -93,8 +93,8 @@ def webook():
 
 
 def send_message(recipient_id, message_text):
-    if "RECIPIENT_TEST" in os.environ:
-        recipient_id = os.environ['RECIPIENT_TEST']
+    # if "RECIPIENT_TEST" in os.environ:
+    #     recipient_id = os.environ['RECIPIENT_TEST']
 
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
