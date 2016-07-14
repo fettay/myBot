@@ -29,7 +29,7 @@ def send():
     data = request.get_json()
     print("Sent message:")
     print(data["text"])
-    print("")
+    print(data)
     formatted = format_fb_req(data["text"])
     r = requests.post(TEST_APP_URL, data=formatted, headers=HEADERS)
     return "ok", 200

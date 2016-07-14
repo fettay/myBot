@@ -2,11 +2,11 @@ import handler
 import os
 import sys
 import json
-import requests
 from flask import Flask, request
 import pandas as pd
 from sessionHandler import SessionHandler
 import redis
+import fbApi
 
 
 app = Flask(__name__)
@@ -29,7 +29,6 @@ else:
     ACCESS_TOKEN = os.environ["PAGE_ACCESS_TOKEN"]
     REDIS_URL = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
     r = redis.from_url(REDIS_URL)
-
 
 PARAMS = {
     "access_token": ACCESS_TOKEN
@@ -57,7 +56,7 @@ def verify():
 def webook():
     # endpoint for processing incoming messaging events
     data = request.get_json()
-    log(data)  # you may not want to log every incoming message in production, but it's good for testing
+    print(data)  # you may not want to log every incoming message in production, but it's good for testing
 
     if data["object"] == "page":
 
@@ -93,10 +92,8 @@ def webook():
 
 
 def send_message(recipient_id, message_text):
-    # if "RECIPIENT_TEST" in os.environ:
-    #     recipient_id = os.environ['RECIPIENT_TEST']
 
-    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+    print("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
     data = json.dumps({
         "recipient": {
@@ -106,44 +103,17 @@ def send_message(recipient_id, message_text):
             "text": message_text
         }
     })
-    if TEST_MODE:
-        # print(message_text)
-        return
+    fbApi.message(params=PARAMS, headers=HEADERS, data=data)
 
-    r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
-    if r.status_code != 200:
-        log(r.status_code)
-        log(r.text)
 
 
 def send_carousel(recipient_id, formatted_carousel):
-    # if os.environ['RECIPIENT_TEST']:
-    #     recipient_id = os.environ['RECIPIENT_TEST']
+    print("Sending carousel")
     formatted_carousel["recipient"] = {"id": recipient_id}
     data = json.dumps(formatted_carousel)
-    r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)
-    if r.status_code != 200:
-        log(r.status_code)
-        log(r.text)
+    fbApi.message(params=PARAMS, headers=HEADERS, data=data)
 
 
-
-def set_greetings(greeting):
-    data = {"setting_type": "greeting",
-            "greeting": {
-                    "text": greeting
-                }
-            }
-    data = json.dumps(data)
-    r = requests.post(FB_URL + "thread_settings", params=PARAMS, headers=HEADERS, data=data)
-    if r.status_code != 200:
-        log(r.status_code)
-        log(r.text)
-
-
-def log(message):  # simple wrapper for logging to stdout on heroku
-    print(str(message))
-    sys.stdout.flush()
 
 
 @app.errorhandler(500)
@@ -155,5 +125,5 @@ if __name__ == '__main__':
     DEFAULT_GREETING = "Bonjour, je peux vous indiquez les prix des articles, ou les horaires des magasins."
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    # set_greetings(DEFAULT_GREETING)
+    # fbApi.set_greetings(DEFAULT_GREETING)
 

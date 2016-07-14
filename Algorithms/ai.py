@@ -28,8 +28,8 @@ def map_to_representation(string_, mapping, size_voc):
 def dump_clf(clf, vectorizer, outfile):
     clf_file = outfile + '_clf.pkl'
     vectorizer_file = outfile + '_vectorizer.pkl'
-    joblib.dump(clf, clf_file)
-    joblib.dump(vectorizer, vectorizer_file)
+    joblib.dump(clf, clf_file, protocol=2)
+    joblib.dump(vectorizer, vectorizer_file, protocol=2)
 
 
 def load_clf(file_name):
