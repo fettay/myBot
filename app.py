@@ -70,10 +70,10 @@ def webook():
                     # Get Session
                     current_sess = sess_handler.get(sender_id)
                     # Handle response: De quelle ... parlez vous?
-                    if 'classify' in current_sess and current_sess['classify'][1] == 1:
-                        cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
-                    else:
-                        cls_result = hdl.classify(message_text)
+                    # if 'classify' in current_sess and current_sess['classify'][1] == 1:
+                    #     cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
+                    # else:
+                    cls_result = hdl.classify(message_text)
 
                     if cls_result[0] is not None:
                         current_sess.set(classify=cls_result)
@@ -117,8 +117,8 @@ def send_message(recipient_id, message_text):
 
 
 def send_carousel(recipient_id, formatted_carousel):
-    if os.environ['RECIPIENT_TEST']:
-        recipient_id = os.environ['RECIPIENT_TEST']
+    # if os.environ['RECIPIENT_TEST']:
+    #     recipient_id = os.environ['RECIPIENT_TEST']
     formatted_carousel["recipient"] = {"id": recipient_id}
     data = json.dumps(formatted_carousel)
     r = requests.post(FB_URL + "messages", params=PARAMS, headers=HEADERS, data=data)

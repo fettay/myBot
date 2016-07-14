@@ -98,13 +98,13 @@ class Handler(object):
             return "send_message", DEFAULT_ANSWER
         elif status == 1:
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
-            if class_ == "product_view":
+            # if class_ == "product_view":
+            if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
                 return "send_carousel", format_carousel(res_lines)
             if DATA_CONTAINERS[class_][0] == 'SHOPS':
-                list_res = (res_lines["city"] + res_lines["Adresse"]).values
+                list_res = (res_lines["city"] + " " + res_lines[DATA_CONTAINERS[class_][1]]).values
                 return "send_message", "De quelle boutique parlez vous? \n{}".format("\n".join(list_res))
-            elif DATA_CONTAINERS[class_][0] == 'PRODUCTS':
-                return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
+                # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
         else:  # -1
             return "send_message", DEFAULT_ANSWER

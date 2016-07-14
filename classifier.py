@@ -88,12 +88,12 @@ def item_finder(sentence, dict_df, class_):
     keywords = keywords_fr.extract(sentence)
     df_data = dict_df[handler.DATA_CONTAINERS[class_][0]]
     compared = compare_kw(keywords, df_data['Words'])
-    if len(compared[2]) > 1:
+    if len(compared[2]) > 1 and len(compared[2]) < .1 * len(compared[1]):
         return class_, 1, compared[2]
-    elif max(compared[1]) == 0:
-        return None, -1, []
-    else:
+    elif len(compared[2]) == 1:
         return class_, 0, compared[2]
+    else:
+        return None, -1, []
 
 
 def log_classifier(sentence, dict_df):
