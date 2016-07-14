@@ -90,7 +90,7 @@ def item_finder(sentence, dict_df, class_):
     elif len(compared[2]) == 1:
         return class_, 0, compared[2]
     else:
-        return None, -1, []
+        return class_, -1, []
 
 
 def log_classifier(sentence, dict_df):

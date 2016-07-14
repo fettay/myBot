@@ -116,7 +116,10 @@ class Handler(object):
                 # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
         else:  # -1
-            return "send_message", DEFAULT_ANSWER
+            if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
+                return "send_message", "Désolé je ne connais pas cette article"
+            return "send_message", "Désolé je ne connais pas cette boutique"
+        # return "send_message", DEFAULT_ANSWER
 
 
 def format_carousel(product_list):
