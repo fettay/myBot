@@ -1,6 +1,7 @@
 __author__ = 'raphaelfettaya'
 import pandas as pd
 import googlemaps
+import os
 
 
 def load_shops_location(gmaps_client, df_shops):
@@ -19,7 +20,7 @@ def load_shops_location(gmaps_client, df_shops):
 
 
 if __name__ == '__main__':
-    gmaps = googlemaps.Client(key='AIzaSyAUWBep-cs1UvD45Aiz5HSuhEjNkxJ2Vfs')
+    gmaps = googlemaps.Client(key=os.environ["GOOGLE_ACCES_TOKEN"])
     df_data = pd.read_csv('Data/Shops.csv').fillna('')
     # all_loc = load_shops_location(gmaps, df_data)
     # df_data['location'] = all_loc

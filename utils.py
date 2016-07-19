@@ -8,8 +8,9 @@ import urllib
 import requests
 # from urllib import quote #PY2
 from urllib.parse import quote
+import os
 
-ACCESS_TOKEN = 'AIzaSyAUWBep-cs1UvD45Aiz5HSuhEjNkxJ2Vfs'
+ACCESS_TOKEN = os.environ["GOOGLE_ACCES_TOKEN"]
 GEOCODER = googlemaps.Client(key=ACCESS_TOKEN)
 MAX_SHOP_RES = 5
 MAX_DIST_SHOP = 50.0
