@@ -7,15 +7,9 @@ import datefinder
 import datetime
 import classifier
 from unidecode import unidecode
+import utils
 
 DEFAULT_ANSWER = "Desole je n'ai pas compris votre demande."
-DATA_LOC = 'Data/'
-data = json.load(open(DATA_LOC + 'Prod_prix.json'))
-list_prod = data[0]
-list_prix = data[1]
-PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv')
-SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv')
-df_shop = pd.read_csv(DATA_LOC + 'mag.csv')
 DAY_TRANSLATATION = {'Monday':'lundi', 'Tuesday': 'mardi', 'Wednesday': 'mercredi', 'Thursday': 'jeudi',
                      'Friday': 'vendredi', 'Saturday': 'samedi', 'Sunday': 'dimanche'}
 ALL_OPT = ['product_price', 'shop_hours', 'shop_location', 'shop_telephone', 'product_view']
@@ -46,17 +40,23 @@ class Handler(object):
         """
         if self.SHOPS is not None:
             def filter_shops(x):
-                res = " ".join([unidecode(elem.decode('utf-8')) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
-                # res = " ".join([elem for elem in x['Adresse'].split(" ") if not elem.isdigit()])
+                res = " ".join([unidecode(elem) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
+                # res = " ".join([unidecode(elem.decode('utf-8')) for elem in x['Adresse'].split(" ") if not elem.isdigit()]) #PY2
                 try:
-                    res += " " + unidecode(x['city'].decode('utf-8'))
-                    # res += " " + x['city']
+                    res += " " + unidecode(x['city'])
+                    # res += " " + unidecode(x['city'].decode('utf-8')) #PY2
                 except TypeError:
                     pass
                 return res.lower()
             self.SHOPS["Words"] = self.SHOPS.apply(filter_shops, axis=1)
+
         if self.PRODUCTS is not None:
-            self.PRODUCTS["Words"] = self.PRODUCTS.apply(lambda x: x["product"].lower(), axis=1)
+            def filter_products(x):
+                words = x["product"].lower().split()
+                words.extend([utils.plural(word) for word in words])  # Add plurals
+                return " ".join(words)
+
+            self.PRODUCTS["Words"] = self.PRODUCTS.apply(filter_products, axis=1)
 
     def classify(self, sentence, class_=None):
         """
@@ -75,13 +75,6 @@ class Handler(object):
         :param result: Result from classifier
         :return:Tuple API action, Formatted string example: (send_message, "haha")
         """
-        def extract_day(sentence):
-            date = datefinder.find_dates(sentence)
-            if len(date) >= 1:
-                return date[0].strftime('%A')
-            return datetime.datetime.now().strftime('%A')
-
-
         class_, status, all_prod = result
         if status == 0:
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
@@ -89,7 +82,7 @@ class Handler(object):
             if class_ == 'product_price':
                 return "send_message", "Le prix du {} est de {} euros".format(target["product"], target["price"])
             elif class_ == 'shop_hours':
-                day_of_week = extract_day(sentence)
+                day_of_week = utils.extract_day(sentence)
                 res = target[day_of_week]
                 if isinstance(res, float):
                     return "send_message", "Le magasin est fermé le {}".format(DAY_TRANSLATATION[day_of_week])
@@ -110,15 +103,17 @@ class Handler(object):
                                                                       if not el.isdigit()) + ", ", axis=1)
                 data_col = DATA_CONTAINERS[class_][1]
                 if class_ == 'shop_hours':
-                    data_col = extract_day(sentence)
+                    data_col = utils.extract_day(sentence)
                 list_res = (desc + res_lines[data_col]).values
-                return "send_message", "De quelle boutique parlez vous? \n{}".format("\n".join(list_res))
+                return "send_message", "Voilà mes infos: \n{}".format("\n".join(list_res))
                 # return "send_message", "De quel article parlez vous? \n{}".format("\n".join(res_lines["product"].values))
             return "send_message", DEFAULT_ANSWER
         else:  # -1
             if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
                 return "send_message", "Désolé je ne connais pas cette article"
-            return "send_message", "Désolé je ne connais pas cette boutique"
+            elif DATA_CONTAINERS[class_][0] == 'SHOPS':
+                return "Désolé je ne connais pas cette boutique"
+            return "send_message", "Désolé je ne comprend pas ce que vous voulez dire."
         # return "send_message", DEFAULT_ANSWER
 
 
@@ -151,8 +146,10 @@ def format_carousel(product_list):
     return data
 
 if __name__ == '__main__':
+    DATA_LOC = 'Data/'
+    PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv').fillna('')
+    SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv').fillna('')
     assert(keywords_fr.extract("Je suis juif") == set(["juif"]))
-
     hdl = Handler(opt_list=ALL_OPT, shops=SHOPS, products=PRODUCTS)
     while True:
         sentence = raw_input("What do you want to test? ")

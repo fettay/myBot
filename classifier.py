@@ -4,6 +4,7 @@ import keywords_fr
 import handler
 import numpy as np
 import datefinder
+import utils
 from Algorithms import ai, preprocessing
 from sklearn.externals import joblib
 
@@ -25,6 +26,7 @@ def compare_kw(keywords_set, list_data):
     :param list_data: list of bag of words
     :return: biggest list of common strings, scores, arg max of scores
     """
+    # Add plurals
     common = [set(prod.split(' ')).intersection(keywords_set) for prod in list_data]
     scores = [len(com) for com in common]
     args_val = np.argwhere(scores == np.amax(scores)).flatten().tolist()
@@ -90,7 +92,24 @@ def item_finder(sentence, dict_df, class_):
     elif len(compared[2]) == 1:
         return class_, 0, compared[2]
     else:
-        return class_, -1, []
+        return find_alter(sentence, dict_df, class_)
+
+
+def find_alter(sentence, dict_df, class_):
+    """
+    In case we didn't match perfectly, we try to match clother ones, using heuristics.
+    :param sentence: sentence
+    :param dict_df: dict of dataframes
+    :param class_: predicted class
+    :return:class, category_of_result, list of relevant result indices
+    """
+    if handler.DATA_CONTAINERS[class_][0] == 'SHOPS':  # Match 5 clothest under 5km
+        clothest = utils.get_clothest_shop(sentence, dict_df['SHOPS'])
+        if len(clothest) > 0:
+            return class_, 1, clothest
+    if handler.DATA_CONTAINERS[class_][0] == 'PRODUCT':  # TODO Use LEVINSTEIN
+        pass
+    return class_, -1, []
 
 
 def log_classifier(sentence, dict_df):

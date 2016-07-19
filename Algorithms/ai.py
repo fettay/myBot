@@ -10,7 +10,7 @@ import re
 import operator
 import collections
 import numpy as np
-import preprocessing
+from Algorithms import preprocessing
 from sklearn.externals import joblib
 import os
 import json

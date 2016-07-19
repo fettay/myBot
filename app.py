@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 DATA_LOC = 'Data/'
 PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv').fillna('')
-SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv').fillna('')
+SHOPS = pd.read_csv(DATA_LOC + 'Shops2.csv').fillna('')
 hdl = handler.Handler(opt_list=handler.ALL_OPT, shops=SHOPS, products=PRODUCTS)
 
 # Test setting
