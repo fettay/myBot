@@ -137,7 +137,7 @@ def format_carousel(product_list):
             "buttons": [
                 {
                     "type": "web_url",
-                    "url": "www.zadigetvoltaire.com",
+                    "url": p["url"],
                     "title": "Voir le produit sur site"
                 }
             ]
