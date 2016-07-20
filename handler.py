@@ -16,6 +16,7 @@ ALL_OPT = ['product_price', 'shop_hours', 'shop_location', 'shop_telephone', 'pr
 DATA_CONTAINERS = {'product_price': ('PRODUCTS', 'price'), 'shop_hours': ('SHOPS', '*day'),
                    'shop_location': ('SHOPS', 'Adresse'), 'shop_telephone': ('SHOPS', 'telephone'),
                    'product_view':('PRODUCTS', 'price')}
+WORD_ADDRESS = ['avenue', 'boulevard', 'place', 'rue', 'street', 'road', 'cours']
 
 
 class Handler(object):
@@ -40,7 +41,10 @@ class Handler(object):
         """
         if self.SHOPS is not None:
             def filter_shops(x):
-                res = " ".join([unidecode(elem) for elem in x['Adresse'].split(" ") if not elem.isdigit()])
+                address = x["Adresse"].lower()
+                for elem in WORD_ADDRESS:
+                    address = address.replace(elem, '')
+                res = " ".join([unidecode(elem) for elem in address.split(" ") if not elem.isdigit()])
                 # res = " ".join([unidecode(elem.decode('utf-8')) for elem in x['Adresse'].split(" ") if not elem.isdigit()]) #PY2
                 try:
                     res += " " + unidecode(x['city'])
