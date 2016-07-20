@@ -1,5 +1,5 @@
-import handler
 import os
+import handler
 import sys
 import json
 from flask import Flask, request
@@ -7,6 +7,7 @@ import pandas as pd
 from sessionHandler import SessionHandler
 import redis
 import fbApi
+
 
 
 app = Flask(__name__)

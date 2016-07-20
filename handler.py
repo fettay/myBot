@@ -129,6 +129,7 @@ def format_carousel(product_list):
             }
         }
     }
+    product_list = product_list.sample(min(5, len(product_list.index))) # 5 items max
     for _, p in product_list.iterrows():
         format_value = {
             "title": p["product"],
@@ -138,7 +139,7 @@ def format_carousel(product_list):
                 {
                     "type": "web_url",
                     "url": p["url"],
-                    "title": "Voir le produit sur site"
+                    "title": "Site Web"
                 }
             ]
         }
