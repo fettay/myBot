@@ -90,12 +90,12 @@ class Handler(object):
                 res = target[day_of_week]
                 if isinstance(res, float):
                     return "send_message", "Le magasin est fermé le {}".format(DAY_TRANSLATATION[day_of_week])
-                return "send_message", "Le magasin ouvre le {} à {} jusqu'à {}." .format(DAY_TRANSLATATION[day_of_week],
+                return "send_message", "Le magasin ouvre le {} à {} jusqu'à {}.".format(DAY_TRANSLATATION[day_of_week],
                                                                                   res.split('-')[0], res.split('-')[1])
             elif class_ == 'shop_telephone':
-                return "send_message", "Le numero du magasin est le: {}" % target['telephone']
+                return "send_message", "Le numero du magasin est le: {}".format(target['telephone'])
             elif class_ == 'shop_location':
-                return "send_message", "Le magasin se trouve au {}" % target["Adresse"]
+                return "send_message", "Le magasin se trouve au {}".format(target["Adresse"])
             return "send_message", DEFAULT_ANSWER
         elif status == 1:
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
