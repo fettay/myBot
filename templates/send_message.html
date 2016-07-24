@@ -9,6 +9,7 @@
         <p> Enter a message:</p>
         <textarea rows="10" id="data"></textarea>
         <button id="button_send">Send</button>
+        <button id="button_location">Send your location</button>
     </center>
 </body>
 <script src="/static/jquery.js"></script>
@@ -20,6 +21,16 @@
             type: 'POST',
             dataType: 'JSON',
             data: JSON.stringify({'text': data}),
+            contentType: 'application/json',
+            processData: false
+        });
+    });
+     $("#button_location").click(function(){
+        data = $('#data').val()
+        $.ajax({
+            url: "/send_location",
+            type: 'POST',
+            dataType: 'JSON',
             contentType: 'application/json',
             processData: false
         });

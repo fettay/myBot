@@ -104,7 +104,7 @@ def find_alter(sentence, dict_df, class_):
     :return:class, category_of_result, list of relevant result indices
     """
     if handler.DATA_CONTAINERS[class_][0] == 'SHOPS':  # Match 5 clothest under 5km
-        clothest = utils.get_clothest_shop(sentence, dict_df['SHOPS'])
+        clothest = utils.get_closest_shop_from_sentence(sentence, dict_df['SHOPS'])
         if len(clothest) > 0:
             return class_, 1, clothest
     if handler.DATA_CONTAINERS[class_][0] == 'PRODUCT':  # TODO Use LEVINSTEIN

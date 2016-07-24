@@ -9,7 +9,6 @@ import redis
 import fbApi
 
 
-
 app = Flask(__name__)
 
 DATA_LOC = 'Data/'
@@ -65,22 +64,33 @@ def webook():
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
                 if messaging_event.get("message"):  # someone sent us a message
+                    message = messaging_event["message"]
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
-                    message_text = messaging_event["message"]["text"]  # the message's text
-                    # Get Session
-                    current_sess = sess_handler.get(sender_id)
-                    # Handle response: De quelle ... parlez vous?
-                    # if 'classify' in current_sess and current_sess['classify'][1] == 1:
-                    #     cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
-                    # else:
-                    cls_result = hdl.classify(message_text)
 
-                    if cls_result[0] is not None:
-                        current_sess.set(classify=cls_result)
-                    responses_message = hdl.responses_formatter(cls_result, message_text)
-                    action_fn = globals()[responses_message[0]]  # Requested action
-                    action_fn(sender_id, responses_message[1])
+                    if message.get("text"): # TEXT MESSAGE HANDLER
+                        message_text = message["text"]  # the message's text
+                        # Get Session
+                        current_sess = sess_handler.get(sender_id)
+                        # Handle response: De quelle ... parlez vous?
+                        # if 'classify' in current_sess and current_sess['classify'][1] == 1:
+                        #     cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
+                        # else:
+                        cls_result = hdl.classify(message_text)
+
+                        if cls_result[0] is not None:
+                            current_sess.set(classify=cls_result)
+                        responses_message = hdl.responses_formatter(cls_result)
+                        action_fn = globals()[responses_message[0]]  # Requested action
+                        action_fn(sender_id, responses_message[1])
+
+                    elif message.get("attachments"):
+                        for message_data in message.get("attachments"):
+                            if message_data["type"] == 'location':  # Handling location received
+                                lat, long = message_data["payload"]["coordinates"]["lat"], message_data["payload"]["coordinates"]["long"]
+                                response = hdl.get_closest_shops((lat, long))
+                                send_message(sender_id, response[1])
+
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
 

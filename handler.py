@@ -74,7 +74,7 @@ class Handler(object):
         else:
             return classifier.item_finder(sentence, list_df, class_)
 
-    def responses_formatter(self, result, sentence):
+    def responses_formatter(self, result):
         """
         :param result: Result from classifier
         :return:Tuple API action, Formatted string example: (send_message, "haha")
@@ -118,8 +118,15 @@ class Handler(object):
             elif DATA_CONTAINERS[class_][0] == 'SHOPS':
                 return "Désolé je ne connais pas cette boutique"
             return "send_message", "Désolé je ne comprend pas ce que vous voulez dire."
-        # return "send_message", DEFAULT_ANSWER
 
+    def get_closest_shops(self, loc):
+        """
+        :return: Formatted str
+        """
+        cls = ('shop_location', 1, utils.get_closest_shop(loc, self.SHOPS))
+        if len(cls[2]) == 0:
+            return 'send_message', 'Désolé aucune boutique ne se trouve près de vous.'
+        return self.responses_formatter(cls)
 
 def format_carousel(product_list):
     data = {
