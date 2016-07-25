@@ -74,7 +74,7 @@ class Handler(object):
         else:
             return classifier.item_finder(sentence, list_df, class_)
 
-    def responses_formatter(self, result):
+    def responses_formatter(self, result, sentence=None):
         """
         :param result: Result from classifier
         :return:Tuple API action, Formatted string example: (send_message, "haha")
@@ -116,7 +116,7 @@ class Handler(object):
             if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
                 return "send_message", "Désolé je ne connais pas cette article"
             elif DATA_CONTAINERS[class_][0] == 'SHOPS':
-                return "Désolé je ne connais pas cette boutique"
+                return "send_message", "Désolé je ne connais pas cette boutique"
             return "send_message", "Désolé je ne comprend pas ce que vous voulez dire."
 
     def get_closest_shops(self, loc):

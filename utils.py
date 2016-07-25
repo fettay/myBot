@@ -41,9 +41,11 @@ def compute_distance(loc_a, loc_b):
 def get_closest_shop_from_sentence(sentence, df_shops):
     try:
         loc = text_search(sentence)
-    except IndexError:
+        if loc is None:
+            return []
         return get_closest_shop(loc, df_shops)
-
+    except IndexError:
+        return []
 
 def get_closest_shop(loc, df_shops):
     shops = df_shops.apply(lambda x: compute_distance(loc, load_location(x['location'])), axis=1)

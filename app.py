@@ -80,7 +80,7 @@ def webook():
 
                         if cls_result[0] is not None:
                             current_sess.set(classify=cls_result)
-                        responses_message = hdl.responses_formatter(cls_result)
+                        responses_message = hdl.responses_formatter(cls_result, sentence=message_text)
                         action_fn = globals()[responses_message[0]]  # Requested action
                         action_fn(sender_id, responses_message[1])
 
