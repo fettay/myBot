@@ -7,8 +7,9 @@ import os
 
 
 def message(params, headers, data):
-    # if "RECIPIENT_TEST" in os.environ:
-    #     data["recipient"]["id"] == os.environ['RECIPIENT_TEST']
+    if os.environ.get("RECIPIENT_TEST"):
+        print("Recipent: " + os.environ['RECIPIENT_TEST'])
+        data["recipient"]["id"] = os.environ['RECIPIENT_TEST']
     data = json.dumps(data)
     if app.TEST_MODE:
         print(data)

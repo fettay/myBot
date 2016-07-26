@@ -17,6 +17,7 @@ DATA_CONTAINERS = {'product_price': ('PRODUCTS', 'price'), 'shop_hours': ('SHOPS
                    'shop_location': ('SHOPS', 'Adresse'), 'shop_telephone': ('SHOPS', 'telephone'),
                    'product_view':('PRODUCTS', 'price')}
 WORD_ADDRESS = ['avenue', 'boulevard', 'place', 'rue', 'street', 'road', 'cours']
+GENDER_TRANSLATATION = {'male': 'homme', 'female': 'femme', 'unisex': ''}
 
 
 class Handler(object):
@@ -56,12 +57,23 @@ class Handler(object):
 
         if self.PRODUCTS is not None:
             def filter_products(x):
-                words = x["product"].lower().split()
+                words = x["title"].lower().split()
                 words.extend([utils.plural(word) for word in words])  # Add plurals
                 return " ".join(words)
 
-            self.PRODUCTS["Words"] = self.PRODUCTS.apply(filter_products, axis=1)
+            def filter_products_lengow(x):
+                words = x["product_type"].split('>')
+                if len(words) > 1:
+                    words = words[-2:]
+                else:
+                    words = [words[0]]
+                words.append(x["color"])
+                words.append(GENDER_TRANSLATATION[x["gender"]])
+                words.append(x["title"])
+                words.extend([utils.plural_invert(word) for word in words])
+                return " ".join(words).lower()
 
+            self.PRODUCTS["Words"] = self.PRODUCTS.apply(filter_products_lengow, axis=1)
     def classify(self, sentence, class_=None):
         """
         :param sentence: sentence received
@@ -74,7 +86,7 @@ class Handler(object):
         else:
             return classifier.item_finder(sentence, list_df, class_)
 
-    def responses_formatter(self, result, sentence=None):
+    def responses_formatter(self, result, sentence=None, **kwargs):
         """
         :param result: Result from classifier
         :return:Tuple API action, Formatted string example: (send_message, "haha")
@@ -83,8 +95,8 @@ class Handler(object):
         if status == 0:
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
             target = res_lines.iloc[0]
-            if class_ == 'product_price':
-                return "send_message", "Le prix du {} est de {} euros".format(target["product"], target["price"])
+            if class_ == 'product_price' or class_ == 'product_view':
+                return "send_carousel", format_carousel(res_lines)
             elif class_ == 'shop_hours':
                 day_of_week = utils.extract_day(sentence)
                 res = target[day_of_week]
@@ -143,13 +155,13 @@ def format_carousel(product_list):
     product_list = product_list.sample(min(5, len(product_list.index))) # 5 items max
     for _, p in product_list.iterrows():
         format_value = {
-            "title": p["product"],
-            "image_url": p["picture"],
-            "subtitle": "%d€" % p["price"],
+            "title": p["title"].title(),
+            "image_url": p["image_link"],
+            "subtitle": "%s" % p["price"],
             "buttons": [
                 {
                     "type": "web_url",
-                    "url": p["url"],
+                    "url": p["link"],
                     "title": "Site Web"
                 }
             ]

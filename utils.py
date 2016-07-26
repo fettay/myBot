@@ -47,6 +47,7 @@ def get_closest_shop_from_sentence(sentence, df_shops):
     except IndexError:
         return []
 
+
 def get_closest_shop(loc, df_shops):
     shops = df_shops.apply(lambda x: compute_distance(loc, load_location(x['location'])), axis=1)
     sorted_res = shops.sort_values()
@@ -73,7 +74,7 @@ def load_location(loc_data):
         return
     return tuple([float(lt) for lt in loc_data.split('/')])
 
-def plural(mot):
+def plural_invert(mot):
 
     def pluriel_ail(mot) :
         ail= 'bail corail émail soupirail travail ventail vitrail'.split()
@@ -106,12 +107,13 @@ def plural(mot):
 
     def pluriel_regular(mot):
         if mot[-1] == 's':
-            return mot
+            return "".join(mot[:-1])
         else:
             return mot + 's'
 
     functions = [pluriel_ail, pluriel_ou, pluriel_eu, pluriel_al, pluriel_au, pluriel_except, pluriel_regular]
-
+    if mot == "":
+        return mot
     for f in functions:
         m = f(mot)
         if m is not None:
@@ -133,8 +135,12 @@ def lengow_parser(xml_file_path):
             elem = entry.find(tag)
             if elem is None:
                 elem = ''
-            else:
+            elif elem.text is not None:
                 elem = elem.text
+            elif 'href' in elem.attrib:
+                elem = elem.attrib['href']
+            else:
+                elem = ''
             all_data[tag].append(elem)
     return pd.DataFrame(all_data)
 

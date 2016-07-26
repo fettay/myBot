@@ -12,7 +12,7 @@ import fbApi
 app = Flask(__name__)
 
 DATA_LOC = 'Data/'
-PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv').fillna('')
+PRODUCTS = pd.read_csv(DATA_LOC + 'Lengow.csv').fillna('')
 SHOPS = pd.read_csv(DATA_LOC + 'Shops2.csv').fillna('')
 hdl = handler.Handler(opt_list=handler.ALL_OPT, shops=SHOPS, products=PRODUCTS)
 
