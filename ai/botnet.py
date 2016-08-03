@@ -82,8 +82,8 @@ def main():
     learning_rate = 0.01
     maxiter = 10000
     batch = 128
-    display = 100
-    test_iter = 500
+    display = 10
+    test_iter = 50
 
     # Network Parameters
     n_input = data_representation.size_voc
@@ -100,7 +100,7 @@ def main():
     weights = {'out': tf.Variable(tf.random_normal([n_hidden, n_classes]))}
     biases = {'out': tf.Variable(tf.random_normal([n_classes]))}
 
-    def RNN(x, weights, biases):
+    def botnet(x, weights, biases):
         # Current data input shape: (batch_size, n_steps, n_input)
         # Required shape: 'n_steps' tensors list of shape (batch_size, n_input)
 
@@ -117,9 +117,8 @@ def main():
 
         output_layer = tf.matmul(outputs[-1], weights['out']) + biases['out']
         return tf.nn.dropout(output_layer, keep_prob=dropout)
-        return output_layer
 
-    pred = RNN(x, weights, biases)
+    pred = botnet(x, weights, biases)
     cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(pred, y))
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
     correct_pred = tf.equal(tf.argmax(pred,1), tf.argmax(y,1))
