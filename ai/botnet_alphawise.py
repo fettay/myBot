@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 from sklearn.cross_validation import train_test_split
 import preprocessing
-from string import punctuation
+from string import punctuation, lowercase
 
 class DataFeed(object):
     def __init__(self, data, labels, test_size=0.2):
@@ -29,12 +29,15 @@ class DataRepresentation(object):
         self.labels = self.labels_to_one_hot()
         self.sentence_wordwise = [x.split() for x in self.data]
         self.sentence_wordwise = [[x for x in y if x != 'xxx'] for y in self.sentence_wordwise] 
-        self.max_words = max([len(x) for x in self.sentence_wordwise])
         self.vocabulary = list(set([x for y in self.sentence_wordwise for x in y]))
+        #self.max_length = min([16, max([len(x) for x in self.vocabulary])])
+        self.max_length = 64
+        print('max length of a sentence: ', self.max_length)
+        self.alphabet = lowercase + ' ' 
+        self.alphabet_n = len(self.alphabet)
+        print('alphabet_n: ', self.alphabet_n)
         print('vocab length', len(self.vocabulary))
-        #print('labels:', self.labels)
-        self.size_voc = len(self.vocabulary)
-        self.one_hot_mapping = {self.vocabulary[i_]: i_ for i_ in xrange(self.size_voc)}
+        self.one_hot_mapping = {self.alphabet[i_]: i_ for i_ in xrange(self.alphabet_n)}
         self.x = [self.representation(x) for x in self.sentence_wordwise]
 
     def labels_to_one_hot(self):
@@ -56,16 +59,19 @@ class DataRepresentation(object):
         return data, y
 
     def padding(self, representation):
-        if len(representation) < self.max_words:
-            for i in xrange(self.max_words - len(representation)):
-                representation.append(np.zeros(self.size_voc))
+        if len(representation) < self.max_length:
+            for i in xrange(self.max_length - len(representation)):
+                representation.append(np.zeros(self.alphabet_n))
+        else:
+            representation = representation[:self.max_length]
         return representation
 
     def one_hot_encoding(self, sentence):
         representation = []
-        for word in sentence:
-            representation_ = np.zeros(self.size_voc)
-            representation_[self.one_hot_mapping[word]] = 1
+        letters = ' '.join(sentence)
+        for letter in letters:
+            representation_ = np.zeros(self.alphabet_n)
+            representation_[self.one_hot_mapping[letter]] = 1
             representation.append(representation_)
         return self.padding(representation)
 
@@ -83,14 +89,14 @@ def main():
     data = DataFeed(data_representation.x, data_representation.labels)
     # Parameters
     learning_rate = 0.01
-    maxiter = 10000
+    maxiter = 100000
     batch = 128
     display = 10
     test_iter = 50
 
     # Network Parameters
-    n_input = data_representation.size_voc
-    n_steps = data_representation.max_words # number of words
+    n_input = data_representation.alphabet_n
+    n_steps = data_representation.max_length # number of words
     n_hidden = 32 # hidden layer num of features
     n_classes = 6
 
@@ -100,7 +106,7 @@ def main():
     dropout = tf.placeholder("float")
 
     # Define weights
-    weights = {'out': tf.Variable(tf.random_normal([n_hidden, n_classes]))}
+    weights = {'out': tf.Variable(tf.random_normal([2 * n_hidden, n_classes]))}
     biases = {'out': tf.Variable(tf.random_normal([n_classes]))}
 
     def botnet(x, weights, biases):
@@ -114,9 +120,20 @@ def main():
         # Split to get a list of 'n_steps' tensors of shape (batch_size, n_input)
         x = tf.split(0, n_steps, x)
 
-        lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden, forget_bias=1.0)
-        lstm_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_cell, input_keep_prob=dropout, output_keep_prob=dropout)
-        outputs, states = tf.nn.rnn(lstm_cell, x, dtype=tf.float32)
+        #lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden, forget_bias=1.0)
+        #lstm_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_cell, input_keep_prob=dropout, output_keep_prob=dropout)
+
+        # Forward direction cell
+        lstm_fw_cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden, forget_bias=1.0)
+        lstm_fw_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_fw_cell, input_keep_prob=dropout, output_keep_prob=dropout)
+        # Backward direction cell
+        lstm_bw_cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden, forget_bias=1.0)
+        lstm_bw_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_bw_cell, input_keep_prob=dropout, output_keep_prob=dropout)
+        
+        outputs, _, _ = tf.nn.bidirectional_rnn(lstm_fw_cell, lstm_bw_cell, x,
+                                                  dtype=tf.float32)
+
+        #outputs, states = tf.nn.rnn(lstm_cell, x, dtype=tf.float32)
 
         output_layer = tf.matmul(outputs[-1], weights['out']) + biases['out']
         return tf.nn.dropout(output_layer, keep_prob=dropout)
@@ -135,7 +152,8 @@ def main():
         sess.run(init)
         for i in xrange(maxiter):
             batch_x, batch_y = data.get_next_batch(batch)
-            batch_x = batch_x.reshape((batch_y.shape[0], n_steps, n_input))
+            #print(batch_x.shape, batch_y.shape)
+            #batch_x = batch_x.reshape((batch_y.shape[0], n_steps, n_input))
             _, loss, acc = sess.run([optimizer, cost, accuracy], feed_dict={x: batch_x, y: batch_y, dropout:.5})
             if i % display == 0:
                 print("Iter " + str(i) + ", Minibatch Loss= " + \
