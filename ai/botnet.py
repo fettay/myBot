@@ -7,7 +7,6 @@ from string import punctuation
 class DataFeed(object):
     def __init__(self, data, labels, test_size=0.2):
         self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(data, labels, test_size=test_size)
-        print(len(self.y_train), len(self.y_test))
        
     def get_test_data(self):
         return np.asarray(self.x_test), np.asarray(self.y_test)
@@ -77,11 +76,8 @@ class DataRepresentation(object):
 
 def main():
     filename = 'Data/data_augmented'
-    print('before data rep')
     data_representation = DataRepresentation(filename=filename)
-    print('before data feed')
     data = DataFeed(data_representation.x, data_representation.labels)
-    print('after data feed')
     # Parameters
     learning_rate = 0.01
     maxiter = 10000
@@ -90,7 +86,7 @@ def main():
     test_iter = 500
 
     # Network Parameters
-    n_input = data_representation.size_voc # MNIST data input (img shape: 28*28)
+    n_input = data_representation.size_voc
     n_steps = data_representation.max_words # number of words
     n_hidden = 32 # hidden layer num of features
     n_classes = 6
@@ -105,7 +101,6 @@ def main():
     biases = {'out': tf.Variable(tf.random_normal([n_classes]))}
 
     def RNN(x, weights, biases):
-        # Prepare data shape to match `rnn` function requirements
         # Current data input shape: (batch_size, n_steps, n_input)
         # Required shape: 'n_steps' tensors list of shape (batch_size, n_input)
 
@@ -121,7 +116,7 @@ def main():
         outputs, states = tf.nn.rnn(lstm_cell, x, dtype=tf.float32)
 
         output_layer = tf.matmul(outputs[-1], weights['out']) + biases['out']
-        #return tf.nn.dropout(output_layer, keep_prob=dropout)
+        return tf.nn.dropout(output_layer, keep_prob=dropout)
         return output_layer
 
     pred = RNN(x, weights, biases)
@@ -138,8 +133,6 @@ def main():
         sess.run(init)
         for i in xrange(maxiter):
             batch_x, batch_y = data.get_next_batch(batch)
-            #batch_x, batch_y = data.get_train_data()
-            # Reshape data to get 28 seq of 28 elements
             batch_x = batch_x.reshape((batch_y.shape[0], n_steps, n_input))
             _, loss, acc = sess.run([optimizer, cost, accuracy], feed_dict={x: batch_x, y: batch_y, dropout:.5})
             if i % display == 0:
