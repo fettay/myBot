@@ -103,17 +103,20 @@ def plural_invert(mot):
     def pluriel_except(mot):
         if mot== 'oeil' : return ('yeux')
         elif mot == 'ail' : return ('aulx')
-        elif mot[-1] == 'z' or mot[-1] == 'x' : return (mot)
+        # elif mot[-1] == 'z' or mot[-1] == 'x' : return (mot)
 
     def pluriel_regular(mot):
-        if mot[-1] == 's':
+        if mot[-1] in ['s', 'x']:
             return "".join(mot[:-1])
         else:
             return mot + 's'
 
     functions = [pluriel_ail, pluriel_ou, pluriel_eu, pluriel_al, pluriel_au, pluriel_except, pluriel_regular]
+    mot = mot.lower()
     if mot == "":
         return mot
+    if 'sweat' in mot:
+        pass
     for f in functions:
         m = f(mot)
         if m is not None:
@@ -147,8 +150,8 @@ def lengow_parser(xml_file_path):
 if __name__ == '__main__':
     # df_data = pd.read_csv('Data/Shops2.csv').fillna('')
     # print(get_clothest_shop('la boutique de Neuilly Sur Seine svp', df_data))
-    # print(plural('manteau'))
-    fp = '../Downloads/lengowFR.xml'
-    df = lengow_parser(fp)
-    df.columns = [col.replace('{http://www.w3.org/2005/Atom}', '') for col in df.columns]
-    df.to_csv('Data/Lengow.csv', encoding='utf-8')
+    print(plural_invert('manteaux'))
+    # fp = '../Downloads/lengowFR.xml'
+    # df = lengow_parser(fp)
+    # df.columns = [col.replace('{http://www.w3.org/2005/Atom}', '') for col in df.columns]
+    # df.to_csv('Data/Lengow.csv', encoding='utf-8')

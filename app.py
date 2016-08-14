@@ -1,7 +1,6 @@
 import os
 import handler
 import sys
-import json
 from flask import Flask, request
 import pandas as pd
 from sessionHandler import SessionHandler
@@ -76,8 +75,7 @@ def webook():
                         # if 'classify' in current_sess and current_sess['classify'][1] == 1:
                         #     cls_result = hdl.classify(message_text, class_=current_sess['classify'][0])
                         # else:
-                        cls_result = hdl.classify(message_text)
-
+                        cls_result = list(hdl.classify(message_text))
                         if cls_result[0] is not None:
                             current_sess.set(classify=cls_result)
                         responses_message = hdl.responses_formatter(cls_result, sentence=message_text)

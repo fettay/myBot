@@ -7,6 +7,7 @@ import datefinder
 import utils
 from Algorithms import ai, preprocessing
 from sklearn.externals import joblib
+from filtering import filter_main
 
 DUMMY_VOCAB = {
     'product_price': ['prix', 'coute', 'coûte'],
@@ -86,7 +87,10 @@ def item_finder(sentence, dict_df, class_):
     """
     keywords = keywords_fr.extract(sentence)
     df_data = dict_df[handler.DATA_CONTAINERS[class_][0]]
-    compared = compare_kw(keywords, df_data['Words'])
+    compared = list(compare_kw(keywords, df_data['Words']))
+    print(compared)
+    if handler.DATA_CONTAINERS[class_][0] == 'PRODUCTS':
+        compared[2] = filter_results(sentence, dict_df['PRODUCTS'], compared[2])
     if len(compared[2]) > 1 and len(compared[2]) < .1 * len(compared[1]):
         return class_, 1, compared[2]
     elif len(compared[2]) == 1:
@@ -94,6 +98,17 @@ def item_finder(sentence, dict_df, class_):
     else:
         return find_alter(sentence, dict_df, class_)
 
+
+def filter_results(sentence, df_data, res_indices=None):
+    """
+    Apply all filter from filtering.py
+    :param df_data
+    :param res_indices: indices of results
+    :return: filtered values
+    """
+    if res_indices is None:
+        res_indices = [i for i in range(len(df_data.columns))]
+    return filter_main(df_data, res_indices, sentence)
 
 def find_alter(sentence, dict_df, class_):
     """

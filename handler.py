@@ -8,6 +8,8 @@ import datetime
 import classifier
 from unidecode import unidecode
 import utils
+from filtering import COLORS
+import re
 
 DEFAULT_ANSWER = "Desole je n'ai pas compris votre demande."
 DAY_TRANSLATATION = {'Monday':'lundi', 'Tuesday': 'mardi', 'Wednesday': 'mercredi', 'Thursday': 'jeudi',
@@ -17,7 +19,6 @@ DATA_CONTAINERS = {'product_price': ('PRODUCTS', 'price'), 'shop_hours': ('SHOPS
                    'shop_location': ('SHOPS', 'Adresse'), 'shop_telephone': ('SHOPS', 'telephone'),
                    'product_view':('PRODUCTS', 'price')}
 WORD_ADDRESS = ['avenue', 'boulevard', 'place', 'rue', 'street', 'road', 'cours']
-GENDER_TRANSLATATION = {'male': 'homme', 'female': 'femme', 'unisex': ''}
 
 
 class Handler(object):
@@ -56,22 +57,21 @@ class Handler(object):
             self.SHOPS["Words"] = self.SHOPS.apply(filter_shops, axis=1)
 
         if self.PRODUCTS is not None:
+            not_relevant = "homme|femme|{}".format("|".join(COLORS)) # unwanted words
             def filter_products(x):
                 words = x["title"].lower().split()
                 words.extend([utils.plural(word) for word in words])  # Add plurals
                 return " ".join(words)
 
             def filter_products_lengow(x):
-                words = x["product_type"].split('>')
-                if len(words) > 1:
-                    words = words[-2:]
-                else:
-                    words = [words[0]]
-                words.append(x["color"])
-                words.append(GENDER_TRANSLATATION[x["gender"]])
-                words.append(x["title"])
+                words = re.split('>|-|\s', x["product_type"])
+                # words.append(x["color"])
+                # words.append(GENDER_TRANSLATATION[x["gender"]])
+                words.extend(x["title"].split(" "))
+                words = [re.sub(",|&|\s", "", word) for word in words]
+                words = [word for word in words if len(word) > 0]
                 words.extend([utils.plural_invert(word) for word in words])
-                return " ".join(words).lower()
+                return re.sub(not_relevant, "", " ".join(words).lower())
 
             self.PRODUCTS["Words"] = self.PRODUCTS.apply(filter_products_lengow, axis=1)
     def classify(self, sentence, class_=None):
@@ -113,6 +113,9 @@ class Handler(object):
             res_lines = getattr(self, DATA_CONTAINERS[class_][0]).iloc[all_prod]
             # if class_ == "product_view":
             if DATA_CONTAINERS[class_][0] == 'PRODUCTS':
+                # Filter by unique product may be faster
+                gp = res_lines.groupby('item_group_id')
+                res_lines = pd.concat([res_lines.loc[[k.index[0]]] for g, k in gp])
                 return "send_carousel", format_carousel(res_lines)
             if DATA_CONTAINERS[class_][0] == 'SHOPS':
                 desc = res_lines.apply(lambda x:  x["city"] + "".join(el for el in x["Adresse"]
@@ -169,9 +172,10 @@ def format_carousel(product_list):
         data["message"]["attachment"]["payload"]["elements"].append(format_value)
     return data
 
+
 if __name__ == '__main__':
     DATA_LOC = 'Data/'
-    PRODUCTS = pd.read_csv(DATA_LOC + 'Product.csv').fillna('')
+    PRODUCTS = pd.read_csv(DATA_LOC + 'Lengow.csv').fillna('')
     SHOPS = pd.read_csv(DATA_LOC + 'Shops.csv').fillna('')
     assert(keywords_fr.extract("Je suis juif") == set(["juif"]))
     hdl = Handler(opt_list=ALL_OPT, shops=SHOPS, products=PRODUCTS)
