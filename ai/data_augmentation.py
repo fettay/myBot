@@ -76,7 +76,7 @@ def parse_flags():
     parser = argparse.ArgumentParser(prog="Data Augmentation module")
     parser.add_argument('data', type=str, help='path to the data')
     parser.add_argument('stopwords', type=str, help='path to the stopwords')
-    parser.add_argument('--augmentation', '-a', type=int, help='augmentation factor per sentence')
+    parser.add_argument('--augmentation', '-a', type=int, default=10, help='augmentation factor per sentence')
     parser.add_argument('--crawl', '-c', action='store_true', help='augmentation factor per sentence')
     return parser.parse_args()
 

@@ -1,8 +1,30 @@
+import os
 import tensorflow as tf
 import numpy as np
 from sklearn.cross_validation import train_test_split
 import preprocessing
 from string import punctuation, lowercase
+import argparse
+
+
+def parse_flags():
+    parser = argparse.ArgumentParser(prog='botnet')
+    parser.add_argument('--batch', '-b', type=int, default=16, help="size of the batch for training")
+    parser.add_argument('--batch_test', '-z', type=int, default=512, help="size of the batch for testing")
+    #parser.add_argument('--hidden_units', '-u', nargs='+', type=int, default=[256, 128], help="number of hidden units in the LSTM cell")
+    parser.add_argument('--data', '-d', type=str, required=True, help="path to the data")
+    parser.add_argument('--maxiter', '-m', type=int, default=1e7, help="number of iterations for the optimization")
+    parser.add_argument('--lr_init', type=float, default=0.01, help="initial learning rate")
+    parser.add_argument('--lr_step', type=int, default=2000, help="decay the learning rate every x step")
+    parser.add_argument('--lr_decay', type=float, default=.96, help="decay rate of the learning rate")
+    parser.add_argument('--display', type=int, default=50, help="display the training metrics every x step")
+    parser.add_argument('--test', '-t', type=int, default=100, help="test the network every x step")
+    parser.add_argument('--prefix', '-p', type=str, required=True,
+                        help="prefix for saving the model snapshots (directory also used for storing tensorboard files")
+    parser.add_argument('--snapshot', '-s', type=str, default=None,
+                        help="using a saved model for testing or to continue training it")
+    parser.add_argument('--snapstep', type=int, default=1000, help="save a snapshot of the model every x step")
+    return parser.parse_args()
 
 class DataFeed(object):
     def __init__(self, data, labels, test_size=0.2):
@@ -84,21 +106,27 @@ class DataRepresentation(object):
         return np.asarray(one_hot)
 
 def main():
-    filename = 'Data/data_augmented'
-    data_representation = DataRepresentation(filename=filename)
+    flags = parse_flags()
+
+    tensorboard = flags.prefix[:flags.prefix.rfind('/') + 1]
+    if not os.path.isdir(tensorboard):
+        os.makedirs(tensorboard)
+        print('%s does not exist and was created.' % tensorboard)
+
+    data_representation = DataRepresentation(filename=flags.data)
     data = DataFeed(data_representation.x, data_representation.labels)
     # Parameters
-    learning_rate = 0.01
-    maxiter = 100000
-    batch = 128
-    display = 10
-    test_iter = 50
+    learning_rate = flags.lr_init
+    maxiter = int(flags.maxiter)
+    batch = flags.batch
+    display = flags.display
+    test_iter = flags.test
 
     # Network Parameters
     n_input = data_representation.alphabet_n
     n_steps = data_representation.max_length # number of words
     n_hidden = 32 # hidden layer num of features
-    n_classes = 6
+    n_classes = len(data_representation.list_labels)
 
     # Define placeholders
     x = tf.placeholder("float", [None, n_steps, n_input])
@@ -147,13 +175,28 @@ def main():
     # Initializing the variables
     init = tf.initialize_all_variables()
 
-    # Launch the graph
+# ************** Network Saver *****************
+    snapshot_n = flags.snapstep
+    snap_sep = '__'
+    snapshot_prefix = flags.prefix + snap_sep
+    pattern = r'(?:__)([0-9].*)(?:.ckpt)'
+    saver = tf.train.Saver()
+
     with tf.Session() as sess:
         sess.run(init)
+
+        if flags.snapshot is not None:
+            print("--- Retrieving model from snapshot %s ---" %
+                        flags.snapshot)
+            saver.restore(sess, flags.snapshot)
+            try:
+                model_.iter = int(re.findall(
+                    pattern, flags.snapshot)[0]) + 1
+            except:
+                sys.exit('Error while parsing the saved model name.')
+
         for i in xrange(maxiter):
             batch_x, batch_y = data.get_next_batch(batch)
-            #print(batch_x.shape, batch_y.shape)
-            #batch_x = batch_x.reshape((batch_y.shape[0], n_steps, n_input))
             _, loss, acc = sess.run([optimizer, cost, accuracy], feed_dict={x: batch_x, y: batch_y, dropout:.5})
             if i % display == 0:
                 print("Iter " + str(i) + ", Minibatch Loss= " + \
@@ -163,7 +206,12 @@ def main():
                 batch_x_test, batch_y_test = data.get_test_data()
                 acc_test = sess.run(accuracy, feed_dict={x:batch_x_test, y:batch_y_test, dropout:1.0})
                 print("Iter %i, Testing accuracy= %.5f" % (i, acc_test))
-        
+           
+            if i % snapshot_n == 0:
+                save_path = saver.save(
+                    sess, snapshot_prefix + str(i) + '.ckpt')
+                print('Snapshot saved in file: %s' % save_path)
+     
         batch_x_test, batch_y_test = data.get_test_data()
         acc_test = sess.run(accuracy, feed_dict={x:batch_x_test, y:batch_y_test, dropout:1.0})
         print("Testing accuracy= %.5f" % acc_test)

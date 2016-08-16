@@ -1,5 +1,7 @@
+#encoding: utf-8
 import re
 from string import punctuation
+import unicodedata
 
 RGX_HOUR = '([0-9]{1,2}[h|H|:][0-9]{0,2})'
 RPL_HOUR = 'XXhXX'
@@ -32,6 +34,12 @@ def replace_price(string_):
     return string_
 
 
+def remove_diacritics(string_):
+    string_ =  ''.join(c for c in unicodedata.normalize('NFD', unicode(string_, 'utf-8')) if unicodedata.category(c) != 'Mn')
+    string_ = string_.replace(u'œ', 'oe')
+    return string_
+
+
 def remove_symbols(string_):
     # special case for the French word `aujourd'hui`
     ajd = "aujourd'hui"
@@ -42,7 +50,25 @@ def remove_symbols(string_):
 
 
 def clean_string(string_):
-    return remove_symbols(
-                replace_date(
-                    replace_time(
-                        replace_price((string_.lower())))))
+    return remove_diacritics(
+                remove_symbols(
+                    replace_date(
+                        replace_time(
+                            replace_price((string_.lower()))))))
+
+def main():
+    with open('Data/data.train.test') as f:
+        data = [line.rstrip('\n') for line in f]
+        labels = [x[x.index('/'):] for x in data]
+        data = [x[:x.index('/')] for x in data]
+        data = [clean_string(x.rstrip(' ')).lower() for x in data]
+
+        data_cleaned = ''
+        for i in range(len(data)):
+            data_cleaned += data[i] + labels[i] + '\n'
+    with open('Data/data.train.test.clean', 'w') as f:
+        f.write(data_cleaned) 
+
+
+if __name__ == '__main__':
+    main()
