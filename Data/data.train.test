@@ -2,25 +2,37 @@ Combien coute votre XXX le moins cher ? /product_price
 Combien coute une XXX en XXX ? /product_price
 Avez vous un sac qui XXX moins de 100E ? /product_price
 Combien coute la retouche ? /product_price
-Le magasin de XXX est il ouvert ? /shop_hours
-a quelle heure ferme le magasin du XXX ? /shop_hours
-Quelles sont les horaires de vos boutiques a XXX ?/shop_hours
-Quelle boutique est ouverte apres 18h30?/shop_hours
-etes vous ouvert le dimanche ?/shop_hours
-Quelles boutiques ouvriront le 14 juillet  ?/shop_hours
-J'aimerais passer dans la semaine, je finis a 18h30 quelle boutique est ouverte ? /shop_hours
+Combien coute votre XXX le moins cher ? /product_price
+Combien coute une XXX en XXX ? /product_price
+Avez vous un sac qui XXX moins de 100E ? /product_price
+Combien coute la retouche ? /product_price
+Le magasin de XXX est il ouvert ? /shop_contact
+a quelle heure ferme le magasin du XXX ? /shop_contact
+Quelles sont les horaires de vos boutiques a XXX ?/shop_contact
+Quelle boutique est ouverte apres 18h30?/shop_contact
+etes vous ouvert le dimanche ?/shop_contact
+Quelles boutiques ouvriront le 14 juillet  ?/shop_contact
+J'aimerais passer dans la semaine, je finis a 18h30 quelle boutique est ouverte ? /shop_contact
 Quelles sont vos boutiques a XXX ?/shop_location
 Ya une boutique a XXX ?/shop_location
-Je peux vous appeler ?/shop_telephone
-C'est quoi votre numero ?/shop_telephone
-J'aimerais appeler la boutique de XXX /shop_telephone
-Quel est le numero de XXX a XXX ?/shop_telephone
-Je peux entrer en relation avec une boutique svp /shop_telephone
+Je peux vous appeler ?/shop_contact
+C'est quoi votre numero ?/shop_contact
+J'aimerais appeler la boutique de XXX /shop_contact
+Quel est le numero de XXX a XXX ?/shop_contact
+Je peux entrer en relation avec une boutique svp /shop_contact
 Je cherche un XXX /product_view
 Quels sont vos XXX pour cet hiver ? /product_view
 Vous avez des XXX ?/product_view
 J'aimerais faire un cadeau a ma copine /product_view
 Montre moi le XXX  le moins cher /product_view
+Combien coute le  XXX ?/product_price
+combien coute le XXX ?/product_price
+prix du  XXX?/product_price
+A combien est le XXX/product_price
+Le XXX coute combien?/product_price
+le XXX coute combien?/product_price
+combien vaut le XXX/product_price
+il vaut combien le XXX/product_price
 Combien coute le  XXX ?/product_price
 cb coute le XXX ?/product_price
 prix du  XXX?/product_price
@@ -29,63 +41,70 @@ Le XXX coute cb?/product_price
 le XXX coute combien?/product_price
 combien vaut le XXX/product_price
 il vaut cb le XXX/product_price
-a quelle heure ouvre le magasin de la rue XXX/shop_hours
-quelles sont les horaires de la boutique de XXX/shop_hours
-horaire boutique avenue de XXX/shop_hours
-la boutique des XXX est elle ouverte?/shop_hours
-a quelle heure ferme la boutique boulevard XXX?/shop_hours
+a quelle heure ouvre le magasin de la rue XXX/shop_contact
+quelles sont les horaires de la boutique de XXX/shop_contact
+horaire boutique avenue de XXX/shop_contact
+la boutique des XXX est elle ouverte?/shop_contact
+a quelle heure ferme la boutique boulevard XXX?/shop_contact
 adresse de la boutique des XXX/shop_location
 ou se trouve le magasin des XXX exactement?/shop_location
 envoi l'adresse d'un magasin qui est dans le XXX?/shop_location
 emplacement du mag des XXX/shop_location
-numero de la boutique de XXX/shop_telephone
-quel est le numero du magasin a XXX/shop_telephone
-telephone du magasin a XXX/shop_telephone
-comment je peux appeler la boutique des XXX/shop_telephone
+numero de la boutique de XXX/shop_contact
+quel est le numero du magasin a XXX/shop_contact
+telephone du magasin a XXX/shop_contact
+comment je peux appeler la boutique des XXX/shop_contact
 peux tu me montrer toutes les XXX/product_view
 a quoi ressemble le  XXX/product_view
 je peux voir les XXX de la collection hiver stp/product_view
+envoi les photos des XXX de cet hiver/product_view
+quels sont les couleurs pour le XXX/product_view
+y a quoi comme modele de XXX/product_view
+quels sont les nouveaux modeles de XXX/product_view
+Bonjour, pouvez vous me communiquer le prix de XXX ? /product_price 
+J'aimerais connaitre le prix de XXX/product_price 
 envoi les photos des gilet de cet hiver/product_view
 quels sont les couleurs pour le XXX/product_view
 y a quoi comme modele de XXX/product_view
 quels sont les nouveaux modeles de XXX/product_view
 Bonjour, pouvez vous me communiquer le prix de XXX ? /product_price 
 J'aimerais connaitre le prix de XXX/product_price 
-Bonjour, le magasin XXX est-il ouvert a 9h ? /shop_hours
-A quelle heure fermez vous aujourdhui ? /shop_hours
-Vous ouvrez a quelle heure demain ? /shop_hours
-Vous fermez a quelle heure demain ? /shop_hours
+Bonjour, le magasin XXX est-il ouvert a 9h ? /shop_contact
+A quelle heure fermez vous aujourdhui ? /shop_contact
+Vous ouvrez a quelle heure demain ? /shop_contact
+Vous fermez a quelle heure demain ? /shop_contact
 Avez vous un magasin a XXX ? /shop_location 
 Ou se trouve le magasin de XXX ? /shop_location 
 Ou se trouve le magasin le plus proche des XXX ? /shop_location 
-Quel est le numero de telephone du magasin XXX ? /shop_telephone
+Quel est le numero de telephone du magasin XXX ? /shop_contact
 Je pourrais voir vos XXX ? /product_view
 Que proposez vous comme XXX ? /product_view
 J'ai une soiree et je cherche une tenue habillee, que me proposez vous ? /product_view
 Pour cet ete, vous me proposez quoi comme tenue ? /product_view
 pour cet hiver je veux une tenue, vous me proposez quoi comme tenue ? /product_view
 donne moi l adresse du magasin situe rue XXX /shop_location
+quelle rue est la boutique la plus proche de moi /shop_location
 quelle rue est la boutique la plus proched de moi /shop_location
 Sur quelle avenue est situee la boutique la plus proche /shop_location
 Y a t il un magasin proche des XXX /shop_location
 existe t il une boutique vers XXX /shop_location
 avez vous un magasin vers /shop_location
-puis je avoir le numero de la boutique rue XXX/shop_telephone
-numero du magasin rue XXX/shop_telephone
-numero du magasin avenue XXX/shop_telephone
-numero du magasin place XXX/shop_telephone
-telephone du magasin rue XXX/shop_telephone
-telephone du magasin avenue XXX/shop_telephone
-telephone du magasin place XXX/shop_telephone
-telephone de la boutique rue XXX/shop_telephone
-telephone de la boutique avenue XXX/shop_telephone
-telephone de la boutique place XXX/shop_telephone
-numero de telephone du magasin rue XXX/shop_telephone
-numero de telephone du magasin avenue XXX/shop_telephone
-numero telephone du magasin place XXX/shop_telephone
-numero de telephone de la boutique rue XXX/shop_telephone
-numero de telephone de la boutique avenue XXX/shop_telephone
-numero de telephone de la boutique place XXX/shop_telephone
+puis je avoir le numero de la boutique rue XXX/shop_contact
+numero du magasin rue XXX/shop_contact
+numero du magasin avenue XXX/shop_contact
+numero du magasin place XXX/shop_contact
+telephone du magasin rue XXX/shop_contact
+telephone du magasin avenue XXX/shop_contact
+telephone du magasin place XXX/shop_contact
+telephone de la boutique rue XXX/shop_contact
+telephone de la boutique avenue XXX/shop_contact
+telephone de la boutique place XXX/shop_contact
+numero de telephone du magasin rue XXX/shop_contact
+numero de telephone du magasin avenue XXX/shop_contact
+numero telephone du magasin place XXX/shop_contact
+numero de telephone de la boutique rue XXX/shop_contact
+numero de telephone de la boutique avenue XXX/shop_contact
+numero de telephone de la boutique place XXX/shop_contact
 adresse de la boutique de XXX/shop_location
 Montre moi toutes les XXX de la collection/product_view
 je veux voir les XXX disponibles/product_view
@@ -101,16 +120,99 @@ combien d euro coute XXX /product_price
 combien d euros coute XXX/product_price
 combien d euro coutent XXX/product_price
 combien d euros coutent XXX/product_price 
+combien coute XXX en euro/product_price
+combien coute XXX en euros/product_price
+y a t il des soldes sur XXX/product_price
+y a t il des reductions sur vos XXX/product_price
+donne moi le prix de XXX /product_price
+combien d euro coute XXX /product_price
+combien d euros coute XXX/product_price
+combien d euro coutent XXX/product_price
+combien d euros coutent XXX/product_price 
 cb coute XXX en euro/product_price
 cb coute XXX en euros/product_price
-est ce la boutique des XXX est ouverte ce soir/shop_hours
-est ce que le magasin des XXX est ouvert ce soir/shop_hours
-est ce que la boutique des XXX est ouverte demain/shop_hours
-est que le magasin des XXX est ouvert demain/shop_hours
-quels sont les horaire du magasin XXX cette semaine/shop_hours
-quels sont les horaires de la boutique XXX cette semaine/shop_hours
-est ce que le magasin des XXX est ouvert ce weekend/shop_hours
-est ce que la boutique des XXX est ouverte ce weekend/shop_hours
-est que le magasin des XXX est ouvert ce weekend/shop_hours
-quels sont les horaire du magasin XXX cette weekend/shop_hours
-quels sont les horaires de la boutique XXX ce weekend/shop_hours
+est ce la boutique des XXX est ouverte ce soir/shop_contact
+est ce que le magasin des XXX est ouvert ce soir/shop_contact
+est ce que la boutique des XXX est ouverte demain/shop_contact
+est que le magasin des XXX est ouvert demain/shop_contact
+quels sont les horaire du magasin XXX cette semaine/shop_contact
+quels sont les horaires de la boutique XXX cette semaine/shop_contact
+est ce que le magasin des XXX est ouvert ce weekend/shop_contact
+est ce que la boutique des XXX est ouverte ce weekend/shop_contact
+est que le magasin des XXX est ouvert ce weekend/shop_contact
+quels sont les horaire du magasin XXX cette weekend/shop_contact
+quels sont les horaires de la boutique XXX ce weekend/shop_contact
+Salut/greeting
+Yo/greeting
+Salut, comment vas tu/greeting
+Bonjour/greeting
+Ca va/greeting
+Comment ca va bien/greeting
+coucou zadig/greeting
+coucou/greeting
+Bonsoir/greeting
+Bonsoir l ami/greeting
+Bonjour l ami/greeting
+Coucou le bot/greeting
+Salut le bot/greeting
+Bonjour le bot/greeting
+Hello/greeting
+Hello mr robot/greeting
+hello l ami/greeting
+hello par ici/greeting
+y a quelqu'un/greeting
+t es mort/greeting
+youhou/greeting
+hey/greeting
+J'aimerais voir les chaussures/product_view
+Vous avez des montres/product_view
+Quels sont vos accessoires pour femme/product_view
+J'aimerais acheter un cadeau à mon Père/product_view
+Une idée de cadeau pour ma sœur ?/product_view
+Vous avez quoi en solde/product_view
+J'aimerais une veste pour aller avec un pantalon noir/product_view
+Je cherche une tenue habillée/product_view
+J'ai besoin de vêtements professionnels/product_view
+vous avez quoi en t shirt simple/product_view
+Vous avez des chaussures qui fassent à la fois habillé et détente /product_view
+C'est quoi vos manteaux cette année/product_view
+Je cherche un maillot de bain/product_view
+Je voudrais offrir quelque chose à un ami/product_view
+y'a quoi de sympa en ce moment/product_view
+J'ai besoin d'un petit chemisier/product_view
+Une tenue pro svp/product_view
+Je cherche un foulard qui fasse habillé/product_view
+Vous faites des réductions/product_view
+Y'a quoi en soldes/product_view
+Je veux acheter des produits soldés/product_view
+Vous avez une robe bleue/product_view
+Je veux un pantalon gris/product_view
+J'ai besoin d'un t shirt classe/product_view
+cherche jupe rouge/product_view
+cherche ceinture/product_view
+Bague/product_view
+Chapeau/product_view
+Montre la combinaison en jean manches courtes/product_view
+Fais voir les chaussures en daim/product_view
+Besoin d'une chemise en Lin stp/product_view
+J'aime bien vos lunettes de soleil/product_view
+Je veux des chaussures classes/product_view
+besoin de basket/product_view
+Combien coute une chemise en jean/product_view
+C'est combien un tunisien/product_view
+Quelle est la boutique la plus proche/shop_contact
+c'est quoi vos boutiques à XXX/shop_contact
+Y a une boutique à XXX/shop_contact
+Quel magasin ouvre dimanche/shop_contact
+vous ouvrez demain ?/shop_contact
+ça ouvre quand/shop_contact
+Y a une boutique à côté /shop_contact
+c'est ouvert pas loin ?/shop_contact
+A quelle heure vous ouvrez lundi/shop_contact
+A quelle heure vous ouvrez mardi/shop_contact
+A quelle heure vous ouvrez mercredi/shop_contact
+A quelle heure vous ouvrez jeudi/shop_contact
+A quelle heure vous ouvrez vendredi/shop_contact
+A quelle heure vous ouvrez samedi/shop_contact
+A quelle heure vous ouvrez dimanche/shop_contact
+Vous êtes ou/shop_contact
